@@ -1,4 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
+.urbanist-normal {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .bytesized-regular {
+    font-family: 'Bytesized', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+
+
+/* Primary colors */
+
+:root {
+
+    --color-primary: #999AC6;
+
+    /* Primary color for highlights and Heading 1 */
+
+    --color-secondary: #0B3954;
+
+    /* Secondary highlight for Headings 4 & 5 */
+
+ 
+
+    /* Supporting colors */
+
+    --color-light: #FFF9EC;
+
+    /* Light color for card backgrounds */
+
+    --color-dark: #798071;
+
+    /* Dark color for subdued elements */
+
+    --color-bright: #FF5A5F;
+
+    /* Bright color for buttons and warning text */
+
+    --color-background: #FCFAFA;
+
+    /* Background color for the page */
+
+}
 
 body{
     background-color: var(--color-background);
@@ -7,18 +56,22 @@ body{
 }
 
 h1 {
-    font-size: 4rem; /* 64px */
-    color: #0099fe;
+    font-size: 4.2rem; /* 2.6 x 1.618 rounded */
+    color: var(--primary-color);
 }
 
 h2 {
-    font-size: 2rem; /* 32px */
-    color: aqua;
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
                 
 p {
-    font-size: 1rem; /* 16px */
-}
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 
 h1, h2, h3, h4, h5, h6, p {
     line-height: 1.5;

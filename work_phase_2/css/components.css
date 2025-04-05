@@ -1,0 +1,151 @@
+/* Tooltip 高亮提示样式 */
+.highlight-tooltip {
+    background-color: #fff3b0; /* 柔和黄色背景 */
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-style: italic;
+    position: relative;
+    cursor: help;
+  }
+  
+  .highlight-tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 130%;
+    background-color: #333;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    line-height: 1.3;
+    width: max-content;
+    max-width: 240px;
+    white-space: normal;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+  }
+  
+  .highlight-tooltip::before {
+    content: "";
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .highlight-tooltip:hover::after,
+  .highlight-tooltip:hover::before {
+    opacity: 1;
+  }
+
+  /* Flip Card 交互式翻转卡片样式 */
+  .flip-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 2rem;
+  }
+  
+  .flip-card {
+    background-color: transparent;
+    width: 260px;
+    height: 180px;
+    perspective: 1000px;
+    margin: 0 auto;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+    font-family: 'Urbanist', sans-serif;
+  }
+  
+  .flip-card-front {
+    background-color: var(--primary-color); /* 深蓝 */
+  }
+  
+  .flip-card-back {
+    background-color: var(--secondary-color); /* 亮蓝 */
+    transform: rotateY(180deg);
+  }
+  
+  /* INTERACTIVE HIGHLIGHTING */
+/* Base Highlight Style */
+.interactive-highlight {
+    position: relative; /* Allows for positioning of extra elements (e.g., tooltip numbers) */
+    background-color: rgba(255, 215, 0, 0.3); /* Light yellow highlight with 30% transparency */
+    cursor: pointer; /* Changes cursor to indicate interactivity */
+    padding: 2px 5px; /* Adds small space inside the highlight for better readability */
+    border-radius: 5px; /* Rounds the corners slightly for a softer look */
+    transition: background 0.3s ease; /* Smooth transition effect when background changes */
+}
+
+                                                    
+/* Show Number on Hover (Desktop) */
+@media (hover: hover) {
+    .interactive-highlight:hover::after {
+        opacity: 1;
+    }
+}
+
+/* Show Number on Tap (Mobile) */
+.interactive-highlight:focus::after,
+.interactive-highlight:active::after {
+    opacity: 1;
+}
+                                                    
+           
+
+/* Tooltip Styling for Highlighted Text */
+.interactive-highlight::after {
+    content: attr(data-card); /* See the explanation */
+    position: absolute; /* Positions the tooltip relative to the highlighted text */
+    top: -5px; /* Moves the tooltip slightly above the highlighted text */
+    right: -15px; /* Moves the tooltip slightly to the right of the highlighted text */
+    background: var(--accent-color);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 120px; /* Sets a fixed width for the tooltip */
+    height: 30px; /* Sets a fixed height, making the tooltip a perfect circle */
+    display: flex; /* Uses Flexbox to center the text inside the circle */
+    align-items: center; /* Vertically centers the text inside the tooltip */
+    justify-content: center; /* Horizontally centers the text inside the tooltip */
+    border-radius: 10%; /* Creates rounded corners */
+    opacity: 0; /* Initially hides the tooltip */
+    transition: opacity 0.3s ease; /* Smoothly fades in the tooltip by changing the opacity */
+}
+        
+              
