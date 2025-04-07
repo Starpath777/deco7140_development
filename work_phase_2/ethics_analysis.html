@@ -1,43 +1,91 @@
 <!DOCTYPE html>
+
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- CSS Linking -->
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/base.css" />
-        <link rel="stylesheet" href="css/layout.css" />
-        <link rel="stylesheet" href="css/components.css" />
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- CSS Linking -->
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
+    <link href="css/components.css" rel="stylesheet" />
+    <title>WP2 - Ethics Analysis</title>
+</head>
 
-        <title>Work Phase 2</title>
-    </head>
-    <body>
-        <section>
-            <nav class="navbar">
-                <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-                <ul class="menu">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="client_needs_analysis.html">Client Needs</a></li>
-                  <li><a href="user_stories.html">User Stories</a></li>
-                  <li><a href="accessibility_assessment.html">Accessibility</a></li>
-                  <li><a href="ethics_analysis.html" aria-current="page">Ethics</a></li>
-                  <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
-                </ul>
-              </nav>
+<body>
+    <section>
+        <nav class="navbar">
+            <button aria-label="Toggle navigation" class="menu-toggle">☰</button>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="client_needs_analysis.html">Client Needs</a></li>
+                <li><a href="user_stories.html">User Stories</a></li>
+                <li><a href="accessibility_assessment.html">Accessibility</a></li>
+                <li><a aria-current="page" href="ethics_analysis.html">Ethics</a></li>
+                <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
+            </ul>
+        </nav>
     </section>
+    <div class="container">
         <header>
-            <h1>Pete's Work Phase 2</h1>
+            <h1>Ethics Analysis</h1>
         </header>
-        <section>
-            <h2>What's in this website?</h2>
-            <p>
-                This is the second phase of my work. I will be completing A2
-                Design Research during this page. But all of that assessment
-                will be created as pages in this website.
-            </p>
+        <section class="ethics-block">
+            <h2>1. Identifying Ethical Risks</h2>
+            <p>The newsletter subscription plugin collects various personal data fields such as name, email, occupation,
+                income, spending habits, gender, and sexuality. The key ethical risks include:</p>
+            <ul>
+                <li>Privacy violations due to collection of excessive or sensitive personal data.</li>
+                <li>Potential misuse of data through opaque profiling or manipulative targeting.</li>
+                <li>Algorithmic discrimination based on user behavior or device characteristics.</li>
+                <li>Psychological fatigue from overwhelming consent requests and personalization.</li>
+                <li>Default opt-ins that bypass informed user consent.</li>
+                <li>Security threats including identity theft from potential data breaches.</li>
+            </ul>
         </section>
-                    <!-- Linking External JavaScript -->
-<script type="module" src="js/ethics_analysis.js"></script> 
-    </body>
-</html>                                    
+        <section class="ethics-block">
+            <h2>2. Ethical Standards from ACS Framework</h2>
+            <p>According to the Australian Computer Society (ACS) Code of Ethics, the following principles must guide
+                digital systems:</p>
+            <ul>
+                <li><strong>Privacy &amp; Autonomy:</strong> Ensure users can make informed choices and retain control
+                    over their data.</li>
+                <li><strong>Security &amp; Trust:</strong> Limit data collection to what is necessary, and implement
+                    robust protection mechanisms.</li>
+                <li><strong>Fairness &amp; Inclusion:</strong> Avoid algorithmic bias and ensure accessibility for
+                    diverse user groups.</li>
+                <li><strong>Transparency:</strong> Clearly disclose how user data is collected, processed, and stored.
+                </li>
+                <li><strong>Professional Responsibility:</strong> Never compromise user well-being or mental health for
+                    commercial advantage.</li>
+            </ul>
+        </section>
+        <section class="ethics-block">
+            <h2>3. Proposed Solutions for Ethical Design</h2>
+            <ul>
+                <li>Only collect essential data (such as email), and make all other fields optional.</li>
+                <li>Label each input field with its intended purpose, and allow users to skip unnecessary fields.</li>
+                <li>Encrypt and isolate sensitive data (e.g., sexuality or income) and request explicit user consent
+                    before collection.</li>
+                <li>Offer subscription customization (e.g., topics and frequency) to give users more control.</li>
+                <li>Do not enable content targeting or personalization by default.</li>
+                <li>Provide tools for users to view, update, or delete their stored data at any time.</li>
+                <li>Publish regular transparency reports and encourage third-party ethical audits.</li>
+                <li>Involve diverse user voices early in the design process to ensure inclusive outcomes.</li>
+            </ul>
+        </section>
+        <section class="ethics-block">
+            <h2>4. Design Philosophy and Broader Impact</h2>
+            <p>Integrating ethical thinking into web design builds user trust and ensures legal compliance (e.g., GDPR).
+                This shifts the digital experience from one of extraction and surveillance to one of empowerment and
+                community. A privacy-conscious, respectful design helps redefine the website not just as a tool for
+                outreach, but as a space for inclusive and transparent engagement.</p>
+        </section>
+
+    </div>
+    <!-- Linking External JavaScript -->
+    <script src="js/ethics_analysis.js" type="module"></script>
+</body>
+
+</html>

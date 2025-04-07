@@ -1,43 +1,136 @@
 <!DOCTYPE html>
+
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- CSS Linking -->
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/base.css" />
-        <link rel="stylesheet" href="css/layout.css" />
-        <link rel="stylesheet" href="css/components.css" />
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- CSS Linking -->
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
+    <link href="css/components.css" rel="stylesheet" />
+    <title>WP2 - Genai Mt Mcknowledgement</title>
+    <style>
+        .genai-card {
+            background-color: #ffffff;
+            border: 2px solid #3498db;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-        <title>Work Phase 2</title>
-    </head>
-    <body>
-        <section>
-            <nav class="navbar">
-                <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-                <ul class="menu">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="client_needs_analysis.html">Client Needs</a></li>
-                  <li><a href="user_stories.html">User Stories</a></li>
-                  <li><a href="accessibility_assessment.html">Accessibility</a></li>
-                  <li><a href="ethics_analysis.html">Ethics</a></li>
-                  <li><a href="genai_mt_acknowledgement.html" aria-current="page">GenAI Acknowledgement</a></li>
-                </ul>
-              </nav>
+        .genai-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .genai-reflection {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .genai-reflection {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .genai-reflection {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+    <style>
+        .badge {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 0.3em 0.6em;
+            border-radius: 8px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <nav class="navbar">
+            <button aria-label="Toggle navigation" class="menu-toggle">☰</button>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="client_needs_analysis.html">Client Needs</a></li>
+                <li><a href="user_stories.html">User Stories</a></li>
+                <li><a href="accessibility_assessment.html">Accessibility</a></li>
+                <li><a href="ethics_analysis.html">Ethics</a></li>
+                <li><a aria-current="page" href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
+            </ul>
+        </nav>
     </section>
+    <div class="container">
         <header>
-            <h1>Pete's Work Phase 2</h1>
+            <h1>Genai Mt Mcknowledgement</h1>
         </header>
         <section>
-            <h2>What's in this website?</h2>
+            <h2></h2>
             <p>
-                This is the second phase of my work. I will be completing A2
-                Design Research during this page. But all of that assessment
-                will be created as pages in this website.
             </p>
         </section>
-                    <!-- Linking External JavaScript -->
-<script type="module" src="js/genai_mt_acknowledgement.js"></script> 
-    </body>
-</html>                                    
+        <!-- Linking External JavaScript -->
+        <script src="js/genai_mt_acknowledgement.js" type="module"></script>
+        <section class="genai-reflection mt-4">
+            <h2>🤖 GenAI Use Acknowledgement &amp; Reflection</h2>
+            <p>For this task, I used ChatGPT as a support tool to help me design, write, and debug my web project.
+                Specifically, I asked it to:</p>
+            <ul>
+                <li>Help build layout structures and CSS (like flip cards, grid systems, and navbar styling)</li>
+                <li>Convert PDF reports into structured HTML content (for accessibility and ethics pages)</li>
+                <li>Translate and rephrase interview responses into user stories in English</li>
+                <li>Assist with code explanations and troubleshooting</li>
+                <li>Help draft this very reflection!</li>
+            </ul>
+            <div class="genai-card"
+                style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <h3>1. 🤖 GenAI Use Acknowledgement &amp; Reflection</h3><span class="badge">AI Summary</span>
+                <p>Using AI made the learning process smoother and faster. It felt like having a <strong>24/7
+                        assistant</strong> who could explain technical stuff, generate examples, and suggest better ways
+                    to approach problems.</p>
+                <p>Instead of doing the work for me, it helped me build understanding. For example, I became more
+                    confident in debugging layout issues and writing semantic HTML.</p>
+            </div>
+            <div class="genai-card"
+                style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <h3>2. 📘 How AI Supported My Learning</h3><span class="badge">Learning</span>
+                <p>AI was definitely helpful — but <strong>not flawless</strong>. Sometimes the output was generic or
+                    slightly off. I always had to critically check the suggestions, fix bugs, and adapt the tone to
+                    match my writing style. That process itself helped me think more clearly about what I was doing.</p>
+            </div>
+            <div class="genai-card"
+                style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <h3>3. ⚖️ Effectiveness</h3><span class="badge">Evaluation</span>
+                <p>I made sure to follow <strong>responsible AI use guidelines</strong>:</p>
+                <ul>
+                    <li>I didn’t submit any raw AI content without reviewing and editing it</li>
+                    <li>I used AI as a helper, not a replacement for my own work</li>
+                    <li>I didn’t input any personal or sensitive data</li>
+                    <li>I documented how I used AI clearly, including this reflection</li>
+                </ul>
+            </div>
+            <div class="genai-card"
+                style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <h3>4. 🔐 Ethical Considerations</h3><span class="badge">Ethics</span>
+                <p>ChatGPT made a big difference in helping me stay organized, solve problems faster, and reflect more
+                    critically. But <strong>the thinking, editing, and decision-making were still mine</strong>. That
+                    balance made this a great learning experience.</p>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
