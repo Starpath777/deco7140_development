@@ -1,28 +1,124 @@
 <!DOCTYPE html>
+
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <!-- CSS Linking -->
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/base.css" />
-        <link rel="stylesheet" href="css/layout.css" />
-        <link rel="stylesheet" href="css/components.css" />
-
-        <title>Work Phase 2</title>
-    </head>
-    <body>
-        <header>
-            <h1>Pete's Work Phase 2</h1>
-        </header>
-        <section>
-            <h2>What's in this website?</h2>
-            <p>
-                This is the second phase of my work. I will be completing A2
-                Design Research during this page. But all of that assessment
-                will be created as pages in this website.
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- CSS Linking -->
+<link href="css/reset.css" rel="stylesheet"/>
+<link href="css/base.css" rel="stylesheet"/>
+<link href="css/layout.css" rel="stylesheet"/>
+<link href="css/components.css" rel="stylesheet"/>
+<title>Work Phase 2</title>
+</head>
+<body>
+<section>
+<nav class="navbar">
+<button aria-label="Toggle navigation" class="menu-toggle">☰</button>
+<ul class="menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="client_needs_analysis.html">Client Needs</a></li>
+<li><a aria-current="page" href="user_stories.html">User Stories</a></li>
+<li><a href="accessibility_assessment.html">Accessibility</a></li>
+<li><a href="ethics_analysis.html">Ethics</a></li>
+<li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
+</ul>
+</nav>
+</section>
+<div class="container">
+<header>
+<h1>User Stories</h1>
+</header>
+<section class="interview">
+<h5 class="user-name">35-year-old Australian RTS Fan</h5>
+<p class="initial-prompt">Act as a 35-year-old man who loves real-time strategy games and wants to find a
+                partner to battle with.</p>
+<p class="question">How do you feel when you win or lose a game?</p>
+<div class="response px-3">
+<p>If I win through strategy, I feel very accomplished and might write some analysis.</p>
+<p>If I lose due to my own mistakes, I reflect and learn; if it’s due to system or bugs, I feel it loses
+                    the competitive essence.</p>
+</div>
+<p class="question">How do you feel when special situations occur (like disconnection or rule exploitation)?
             </p>
-        </section>
-    </body>
-</html>                                    
+<div class="response px-3">
+<p>Disconnection: I feel it’s an unfair failure and hope for a reconnect function.</p>
+<ul>
+<li>Rule exploitation makes the game boring. I expect developers to quickly rebalance it.</li>
+<li>If an opponent gives up or trolls, the game feels meaningless, I might switch platforms.</li>
+</ul>
+</div>
+<p class="question">What features are essential?</p>
+<div class="response px-3">
+<ul>
+<li>Tactical replay system to analyze decisions.</li>
+<li>Stable server with reconnecting capability.</li>
+<li>Tactical matching system to find players with similar strategies.</li>
+</ul>
+</div>
+<p class="question">What part of the platform helps you most?</p>
+<div class="response px-3">
+<p><span class="interactive-highlight-stories" data-userstory="As a strategy game lover, I want reliable performance and replay analysis so I can refine tactics and improve.">Replay analysis and platform stability</span> are the most valuable for me.</p>
+</div>
+</section>
+<section class="interview">
+<h5 class="user-name">18-year-old UK Girl (LOL Fan)</h5>
+<p class="initial-prompt">Act as an 18-year-old girl from the UK who is a huge fan of League of Legends and
+                wants to find teammates and show off her record.</p>
+<p class="question">How do you feel when you win or lose a game?</p>
+<div class="response px-3">
+<p>If I win, I feel awesome and love to share screenshots on Twitter or Instagram.</p>
+<p>If I lose because of bad teammates, I get super angry and might report them.</p>
+</div>
+<p class="question">How do you feel when special situations occur (like teammates quitting or server
+                issues)?</p>
+<div class="response px-3">
+<p>If a teammate quits mid-game, I feel like it's a waste of time.</p>
+<p>Toxic chat or arguments make me want to leave the game immediately.</p>
+<p>If the server crashes and my record isn't saved, I get really disappointed.</p>
+</div>
+<p class="question">What features are essential?</p>
+<div class="response px-3">
+<ul>
+<li>Match history system to show MVP count and win rate.</li>
+<li>Smart matchmaking to avoid unfair matches.</li>
+<li>Social system to add friends or follow players and even have fans.</li>
+</ul>
+</div>
+<p class="question">What part of the platform helps you most?</p>
+<div class="response px-3">
+<p>I love the match history display. If I can <span class="interactive-highlight-stories" data-userstory="As a social player, I want to share my achievements online so I can get recognition and connect with others.">show my stats on social media</span>, I’ll definitely stick with
+                    the platform.</p>
+</div>
+</section>
+<section class="interview">
+<h5 class="user-name">25-year-old Chinese FPS Gamer</h5>
+<p class="initial-prompt">Act as a 25-year-old guy from China who loves FPS games and wants to find
+                teammates to rank up.</p>
+<p class="question">How do you feel when you win or lose a game?</p>
+<div class="response px-3">
+<p>I’m focused on winning. If I win because of solid teamwork and skill, it feels great.</p>
+<p>If I lose because of hackers or imbalance, I get very frustrated.</p>
+</div>
+<p class="question">How do you feel when special situations occur (like cheating or poor matchmaking)?</p>
+<div class="response px-3">
+<p>Hackers ruin the game—I expect a strong anti-cheat system.</p>
+<p>If the matchmaking is too one-sided, it feels like a waste of effort.</p>
+</div>
+<p class="question">What features are essential?</p>
+<div class="response px-3">
+<ul>
+<li>Powerful anti-cheat system to ensure fairness.</li>
+<li>Ranked matching to pair players with similar levels.</li>
+<li>Voice and quick chat features to help with communication.</li>
+</ul>
+</div>
+<p class="question">What part of the platform helps you most?</p>
+<div class="response px-3">
+<p>Having <span class="interactive-highlight-stories" data-userstory="As a competitive gamer, I want fairness and anti-cheat support so I can focus on skill and teamwork.">reliable anti-cheat and fair matchmaking</span> is what keeps me playing.</p>
+</div>
+</section>
+<!-- Linking External JavaScript -->
+<script src="js/user_stories.js" type="module"></script>
+</div></body>
+</html>
