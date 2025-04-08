@@ -1,77 +1,179 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<!-- CSS Linking -->
-<link href="css/reset.css" rel="stylesheet"/>
-<link href="css/base.css" rel="stylesheet"/>
-<link href="css/layout.css" rel="stylesheet"/>
-<link href="css/components.css" rel="stylesheet"/>
-<title>WP2 - Accessibility Assessment</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- CSS Linking -->
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
+    <link href="css/components.css" rel="stylesheet" />
+    <title>WP2 - Accessibility Assessment</title>
 </head>
+
 <body>
-<section>
-<nav class="navbar">
-<button aria-label="Toggle navigation" class="menu-toggle">☰</button>
-<ul class="menu">
-<li><a href="index.html">Home</a></li>
-<li><a href="client_needs_analysis.html">Client Needs</a></li>
-<li><a href="user_stories.html">User Stories</a></li>
-<li><a aria-current="page" href="accessibility_assessment.html">Accessibility</a></li>
-<li><a href="ethics_analysis.html">Ethics</a></li>
-<li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
-</ul>
-</nav>
-</section>
-<div class="container">
-<header>
-<h1>Accessibility Assessment</h1>
-</header>
-<section class="mb-4">
-<h2>Perceivable: 1.4 Distinguishable</h2>
+    <section>
+        <nav class="navbar">
+            <button aria-label="Toggle navigation" class="menu-toggle">☰</button>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="client_needs_analysis.html">Client Needs</a></li>
+                <li><a href="user_stories.html">User Stories</a></li>
+                <li><a aria-current="page" href="accessibility_assessment.html">Accessibility</a></li>
+                <li><a href="ethics_analysis.html">Ethics</a></li>
+                <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
+            </ul>
+        </nav>
+    </section>
+    <div class="container">
+        <header>
+            <h1>Accessibility Assessment</h1>
+        </header>
+        <section class="mb-4">
+            <h2>Perceivable: 1.4 Distinguishable</h2>
+            <p>To ensure that all users can perceive content clearly, including those with visual impairments or color
+                blindness, the design will follow several WCAG 2.1 Level AA guidelines under the "Distinguishable"
+                category:</p>
 
+            <p>These adjustments aim to make visual content accessible to a wider range of users without sacrificing
+                aesthetic quality.</p>
+            <div class="flip-grid">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>1.4.1 Use of Color</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Combine color with labels/icons so that colorblind users understand key messages.</p>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>1.4.3 Minimum Contrast</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Maintain 4.5:1 contrast for text; enable high contrast mode.</p>
+                        </div>
+                    </div>
+                </div>
 
-<p>To ensure that all users can perceive content clearly, including those with visual impairments or color blindness, the design will follow several WCAG 2.1 Level AA guidelines under the "Distinguishable" category:</p>
-<ul>
-<li><strong>1.4.1 Use of Color:</strong> Critical information such as status indicators or error messages will not rely on color alone. Instead, we will combine color with textual cues (e.g., labels like "Success" or "Error") and visual icons. This ensures that users with color vision deficiencies can still understand the message.</li>
-<li><strong>1.4.3 Minimum Contrast:</strong> All text elements, especially body copy and interface labels, will maintain a minimum contrast ratio of 4.5:1 against their background. Larger headings will maintain at least 3:1. We will also implement a high-contrast mode option for users who require stronger visual separation.</li>
-<li><strong>1.4.4 Resize Text:</strong> The website will use responsive units (like em, rem, %) for typography. This enables users to zoom text up to 200% without loss of structure, functionality, or content overlap, meeting responsive design best practices.</li>
-</ul>
-<p>These adjustments aim to make visual content accessible to a wider range of users without sacrificing aesthetic quality.</p>
-</section>
-<section class="mb-4">
-<h2>Operable: 2.1.1 Keyboard Navigability</h2>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>1.4.4 Resize Text</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Use relative units (em/rem) so text can scale up to 200% without breaking layout.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-4">
+            <h2>Operable: 2.1.1 Keyboard Navigability</h2>
+            <p>Some users rely entirely on keyboard navigation, such as individuals with motor impairments, users of
+                screen readers, or those who avoid mouse input due to personal preferences. Our site design addresses
+                this need by ensuring:</p>
 
+            <p>By providing keyboard accessibility from the ground up, we improve usability for a broad range of
+                assistive technology users.</p>
+            <div class="flip-grid">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Need: Keyboard-only Navigation</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>All links/buttons/forms should work with Tab, Enter, and Space.</p>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Need: Semantic Structure</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Use semantic HTML (e.g., <button>, <nav>) for proper focus flow.</nav></button></p>
+                        </div>
+                    </div>
+                </div>
 
-<p>Some users rely entirely on keyboard navigation, such as individuals with motor impairments, users of screen readers, or those who avoid mouse input due to personal preferences. Our site design addresses this need by ensuring:</p>
-<ul>
-<li>All <strong>interactive elements</strong> (like links, buttons, and form fields) are fully operable using a keyboard alone (e.g., via Tab, Enter, or Space).</li>
-<li>We will use <strong>semantic HTML elements</strong> (like &lt;button&gt;, &lt;nav&gt;, &lt;form&gt;) to guarantee predictable tabbing and proper focus management.</li>
-<li>Any custom widgets or dynamic UI components (such as modals, tabs, or accordions) will include <strong>JavaScript keyboard event listeners</strong> for accessibility.</li>
-<li>A clearly visible <strong>"Skip to main content"</strong> link will appear at the top of the page for screen reader and keyboard users, allowing them to bypass repetitive navigation.</li>
-</ul>
-<p>By providing keyboard accessibility from the ground up, we improve usability for a broad range of assistive technology users.</p>
-</section>
-<section class="mb-4">
-<h2>Understandable: 3.1.5 Reading Level</h2>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Need: Skip Links</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Provide a visible 'Skip to main content' link for assistive users.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-4">
+            <h2>Understandable: 3.1.5 Reading Level</h2>
+            <p>Accessibility is not only about interacting with content, but also understanding it. To support
+                individuals with cognitive disabilities, reading challenges, or those for whom English is a second
+                language, the following strategies will be used:</p>
 
+            <p>This approach ensures the content remains inclusive and understandable, supporting equitable access for
+                all users.</p>
+            <div class="flip-grid">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Use Clear Summaries</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Start each section with a simple summary to aid understanding.</p>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Add Visual Aids</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Use icons, diagrams, and colors to reinforce key points.</p>
+                        </div>
+                    </div>
+                </div>
 
-<p>Accessibility is not only about interacting with content, but also understanding it. To support individuals with cognitive disabilities, reading challenges, or those for whom English is a second language, the following strategies will be used:</p>
-<ul>
-<li>Every major content section will begin with a <strong>clear and concise summary</strong>, allowing users to grasp the key idea before diving into details.</li>
-<li>We will incorporate <strong>visual aids</strong> such as icons, color coding, and diagrams to reinforce important points.</li>
-<li>Written language will aim for a <strong>B1-B2 reading level</strong> (according to CEFR), using plain English, short sentences, and active voice to reduce confusion.</li>
-<li>For those who need additional support, optional <strong>text-to-speech functionality</strong> will be considered, enabling auditory access to written content.</li>
-</ul>
-<p>This approach ensures the content remains inclusive and understandable, supporting equitable access for all users.</p>
-</section>
-</div>
-<!-- Linking External JavaScript -->
-<script src="js/accessibility_assessment.js" type="module"></script>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Use Plain Language</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Write at B1-B2 level using short sentences and active voice.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Add Audio Support</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Optional text-to-speech for auditory learners or vision-impaired users.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Linking External JavaScript -->
+    <script src="js/accessibility_assessment.js" type="module"></script>
 </body>
+
 </html>
