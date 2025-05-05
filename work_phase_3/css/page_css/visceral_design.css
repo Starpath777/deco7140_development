@@ -1,0 +1,25 @@
+/* 基本移动端尺寸 */
+.gallery img {
+    width: 60%;          /* 容器的 60% */
+    height: 200px;       /* 固定高度 */
+    object-fit: cover;   /* 填满且保持纵横比 */
+    object-position: top;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  /* 鼠标悬停时微交互 */
+  .gallery img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+  
+  /* 桌面端：图片宽度 100%，高度增高 */
+  @media screen and (min-width: 768px) {
+    .gallery img {
+      width: 100%;
+      height: 300px;
+    }
+  }
+  

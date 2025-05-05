@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 公共样式 -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <!-- 新增：赛博朋克风格布局 -->
+  <link rel="stylesheet" href="css/cyberpunk_layout.css">
+  <!-- 页面专用样式 -->
+  <link rel="stylesheet" href="css/page_css/style_guide.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <title>Style Guide</title>
+</head>
+
+
+<body>
+  <main>
+    <div class="container">
+      <!-- 移动端导航 -->
+      <nav id="nav-mobile" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">WP3 Home</a></li>
+          <li><a href="site_map.html">Site Map</a></li>
+          <li><a href="style_guide.html" aria-current="page">Style Guide</a></li>
+          <li><a href="ethical_response.html">Ethics Response</a></li>
+          <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+        </ul>
+      </nav>
+
+      <!-- 桌面端导航 -->
+      <nav id="nav-desktop" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">WP3 Home</a></li>
+          <li><a href="site_map.html">Site Map</a></li>
+          <li><a href="style_guide.html" aria-current="page">Style Guide</a></li>
+          <li><a href="ethical_response.html">Ethics Response</a></li>
+          <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+        </ul>
+      </nav>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="style_guide.html" aria-current="page">Style Guide</a></li>
+      </ul>
+
+      <!-- 页面标题 -->
+      <h1>Style Guide</h1>
+
+      <!-- 简短介绍 -->
+      <section class="intro-section">
+        <p>
+          Welcome to the style guide for the Urban Food website created as a concept for the Connected Communities
+          Initiative.
+          In this guide, you'll find the design language and component styles that inform the look and feel of our
+          pages.
+        </p>
+      </section>
+
+
+      <h2>Button Styles</h2>
+
+      <div class="button-example">
+        <h3>Primary Button</h3>
+        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" disabled>Submit</button>
+
+        <p class="explanation">
+          主按钮使用高对比度背景色；悬停时背景色加深，按下时略微缩放，下陷效果；禁用时降低不透明度并禁止交互。这样能让用户明确感知“可点”、“已点”、“不可点”。<br>
+          <em> The primary button uses a high-contrast background; on hover the background darkens, on press it slightly
+            scales down with a depressed effect; when disabled it reduces opacity and disables interaction. This clearly
+            communicates “clickable,” “pressed,” and “unclickable” states to users.</em>
+        </p>
+      </div>
+
+      <div class="button-example">
+        <h3>Secondary Button</h3>
+        <button class="btn btn-Secondary">Submit</button>
+        <button class="btn btn-Secondary">Submit</button>
+        <button class="btn btn-Secondary">Submit</button>
+        <button class="btn btn-Secondary" disabled>Submit</button>
+        <p class="explanation">
+          次按钮使用边框 + 透明背景；悬停时边框颜色加深或出现阴影；按下时内边距微调；禁用时移除边框并降低对比度。<br>
+          <em> The secondary button features a border with a transparent background; on hover the border color deepens
+            or a shadow appears; on press the padding adjusts slightly; when disabled the border is removed and contrast
+            is lowered.</em>
+        </p>
+      </div>
+
+      <div class="button-example">
+        <h3>Icon-only Button</h3>
+        <button class="btn btn-icon" aria-label="Search">🔍</button>
+        <button class="btn btn-icon" aria-label="Search">🔍</button>
+        <button class="btn btn-icon" aria-label="Search">🔍</button>
+        <p class="explanation">
+          纯图标按钮内嵌 emoji/SVG，使用 <code>aria-label</code> 确保屏幕阅读器用户也能理解其含义。悬停和按下同样会提供视觉反馈（如边框、阴影或颜色变化）。<br>
+          <em> The icon-only button embeds an emoji or SVG and uses <code>aria-label</code> to ensure screen reader
+            users understand its purpose. Hover and press states also provide visual feedback (e.g., border, shadow, or
+            color change).</em>
+        </p>
+      </div>
+
+
+      </section>
+
+      <!-- 样式卡片列表 -->
+      <section class="cards m-y-5">
+        <div class="card">
+          <h2>Visceral</h2>
+          <p>Designing for first impressions covering information architecture, layout, typography and colour.</p>
+          <a href="visceral_design.html" class="button">Learn More</a>
+          <img src="assets/visceral.jpg" alt="Visceral design example" class="responsive-img" />
+
+        </div>
+
+        <div class="card">
+          <h2>Behavioural</h2>
+          <p>Designing for functionality covering key interactive components including forms with a focus on
+            micro-interactions and feedback.</p>
+          <a href="behavioural_design.html" class="button">Learn More</a>
+          <img src="assets/behavioural.jpg" alt="Behavioural design example" class="responsive-img" />
+
+        </div>
+
+        <div class="card">
+          <h2>Reflective</h2>
+          <p>Designing for meaning and identity covering how users see themselves in the website including ethical
+            considerations.</p>
+          <a href="reflective_design.html" class="button">Learn More</a>
+          <img src="assets/reflective.jpg" alt="Reflective design example" class="responsive-img" />
+
+        </div>
+      </section>
+
+
+      <!-- 页面专用脚本 -->
+      <script type="module" src="js/style_guide.js"></script>
+</body>
+
+</html>

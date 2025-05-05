@@ -1,0 +1,54 @@
+/* css/component_skeletons/viewer.css */
+.viewer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+    padding: 1rem;
+    padding-bottom: 50px;    /* 给关闭按钮留空间 */
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;           /* 保证它跑在最前面 */
+  }
+  
+  /* 打开展示时 */
+  .viewer.open {
+    transform: translateX(0);
+  }
+  
+  /* 桌面端改宽度 */
+  @media screen and (min-width: 768px) {
+    .viewer {
+      width: 50%;
+    }
+  }
+  .viewer {
+    position: fixed;    /* 已经是fixed */
+    top: 0;
+    right: 0;
+    /* … */
+  }
+  
+  .viewer .close {
+    position: absolute;
+    top: 1rem;          /* 距离容器顶部 */
+    right: 1rem;        /* 或 left:1rem，根据你想放左边还是右边 */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;      /* 保证比图片还要高 */
+  }
+  
+  .viewer img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 2rem);  /* 留点上下padding／按钮空间 */
+    margin: 1rem auto;               /* 水平居中，距离顶部也留白 */
+  }
+  
+  

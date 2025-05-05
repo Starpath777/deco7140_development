@@ -1,0 +1,19 @@
+/* css/component_skeletons/form.css */
+
+/* 重置表单元素的外边距、内边距和字体 */
+label,
+input,
+textarea,
+button {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+/* 确保按钮初始是 inline-block，方便后面自定义尺寸 */
+button {
+  display: inline-block;
+  cursor: pointer;
+}

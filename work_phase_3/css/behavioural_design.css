@@ -1,0 +1,92 @@
+/* css/behavioural_design.css */
+
+/* 1. 限制表单最大宽度并居中 */
+#community-section {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  /* 2. 每个表单域用 .form-group 包裹，垂直分组 */
+  #community-form .form-group {
+    margin-bottom: 1.5rem; /* m-b-* */
+  }
+  
+  /* 3. 标签距离输入框不要太远 */
+  #community-form .form-group label {
+    margin-bottom: .25rem;
+    font-weight: 600;
+    color: var(--text-color, #333);
+  }
+  
+  /* 4. 输入框、文本域、文件选择器样式 */
+  #community-form .form-group input[type="text"],
+  #community-form .form-group input[type="email"],
+  #community-form .form-group input[type="file"],
+  #community-form .form-group textarea {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid #ccc;
+    border-radius: .25rem;
+    background-color: #fafafa;
+  }
+  
+  /* 5. 提交按钮风格 */
+  #community-form button {
+    background-color: var(--primary-color, #336699);
+    color: #fff;
+    border: none;
+    padding: .75rem 1.5rem;
+    border-radius: .25rem;
+    font-weight: 700;
+    transition: background-color .2s ease, transform .1s ease;
+  }
+  
+  /* 5.1 悬停、按下反馈 */
+  #community-form button:hover {
+    background-color: var(--primary-color-dark, #285080);
+  }
+  #community-form button:active {
+    transform: translateY(1px);
+  }
+  
+  /* 6. 焦点态高亮，方便键盘导航 */
+  #community-form input:focus,
+  #community-form textarea:focus,
+  #community-form button:focus {
+    outline: 2px solid var(--primary-color-light, #88aacc);
+    outline-offset: 2px;
+  }
+  
+  /* 7. 反馈消息区的样式和状态色 */
+  #form-feedback {
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+  #form-feedback.success {
+    color: green;
+  }
+  #form-feedback.error {
+    color: red;
+  }
+  
+
+  /*画廊*/
+  /* 先让 gallery 横向排列并自动换行 */
+.reflective-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;               /* 图片之间留点空隙 */
+    justify-content: flex-start;
+  }
+  
+  /* 限制每张图最大宽度，高度按比例缩放 */
+  .reflective-img {
+    max-width: 200px;        /* 你想要的最大宽度，比如 200px */
+    width: 100%;             /* 容器更小会等比缩 */
+    height: auto;            /* 保持原始纵横比 */
+    object-fit: cover;       /* 保证填满但不变形 */
+    border-radius: 4px;      /* 可选：圆角 */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* 可选：阴影 */
+  }
+  

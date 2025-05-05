@@ -2,57 +2,57 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" /> <!-- 设置字符编码为 UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- 响应式视口设置，适配不同设备 -->
 
-    <!-- CSS Linking -->
+    <!-- 引入外部 CSS 样式文件 / Link external CSS files -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
 
-    <title>Work Phase 2</title>
+    <title>Work Phase 2</title> <!-- 网页标题 -->
 </head>
 
 <body>
-    <section>
-        <nav class="navbar">
-            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-            <ul class="menu">
-              <li><a href="index.html" aria-current="page">Home</a></li>
-              <li><a href="client_needs_analysis.html">Client Needs</a></li>
-              <li><a href="user_stories.html">User Stories</a></li>
-              <li><a href="accessibility_assessment.html">Accessibility</a></li>
-              <li><a href="ethics_analysis.html">Ethics</a></li>
-              <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
+    <!-- 主导航栏区域 / Main navigation bar -->
+    <section>   
+        <nav class="navbar"> <!-- 顶部导航容器 -->
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button> <!-- 移动端菜单切换按钮（汉堡菜单） -->
+            <ul class="menu"> <!-- 导航链接列表 -->
+              <li><a href="index.html" aria-current="page">Home</a></li> <!-- 首页链接 -->
+              <li><a href="client_needs_analysis.html">Client Needs</a></li> <!-- 客户需求分析页面 -->
+              <li><a href="user_stories.html">User Stories</a></li> <!-- 用户故事页面 -->
+              <li><a href="accessibility_assessment.html">Accessibility</a></li> <!-- 可访问性评估页面 -->
+              <li><a href="ethics_analysis.html">Ethics</a></li> <!-- 伦理分析页面 -->
+              <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li> <!-- GenAI 说明页面 -->
             </ul>
-          </nav>
-</section>
-            <!-- add links to the rest of your pages here -->
-        </ul>
-    </nav>
+        </nav>
+    </section>
 
+    <!-- 页面主内容容器 / Main content container -->
     <div class="container">
         <header>
-            <h1>Tianyi's Work Phase 2</h1>
+            <h1>Tianyi's Work Phase 2</h1> <!-- 页面主标题 -->
         </header>
 
         <section>
-            <h2>What's in this website?</h2>
+            <h2>What's in this website?</h2> <!-- 内容介绍子标题 -->
             <p>
                 我们是一家
                 <span class="highlight-tooltip" data-tooltip="CCI 是一个非营利组织，致力于增强社区联系。">非营利</span>
-                组织。
+                组织。 <!-- 鼠标悬停提示说明 CCI -->
             </p>
 
             <p>
                 这是我在工作阶段 2 中的工作，展示了我对动态网站的理解和设计理念。
                 该网站旨在为不同的社区提供一个中心枢纽，供成员分享资源、突出事件并促进有意义的联系。
             </p>
-
+        </section>
     </div>
-    <!-- Linking External JavaScript -->
-<script type="module" src="js/index.js"></script> 
+
+    <!-- 引入 JavaScript 模块脚本 / Link to external JavaScript module -->
+    <script type="module" src="js/index.js"></script> 
 </body>
 
 </html>

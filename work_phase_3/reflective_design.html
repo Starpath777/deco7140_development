@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflective Design</title>
+
+  <!-- 全局样式 -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <!-- 新增：赛博朋克风格布局 -->
+  <link rel="stylesheet" href="css/cyberpunk_layout.css">
+  <!-- 画廊、查看器、手风琴 样式 -->
+  <link rel="stylesheet" href="css/component_skeletons/gallery.css" />
+  <link rel="stylesheet" href="css/component_skeletons/viewer.css" />
+  <link rel="stylesheet" href="css/component_skeletons/accordion.css" />
+
+  <!-- 页面专用 -->
+  <link rel="stylesheet" href="css/reflective_design.css" />
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <!-- 移动端导航 -->
+      <nav id="nav-mobile" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">WP3 Home</a></li>
+          <li><a href="site_map.html">Site Map</a></li>
+          <li><a href="style_guide.html" aria-current="page">Style Guide</a></li>
+          <li><a href="ethical_response.html">Ethics Response</a></li>
+          <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+        </ul>
+      </nav>
+
+      <!-- 桌面端导航 -->
+      <nav id="nav-desktop" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">WP3 Home</a></li>
+          <li><a href="site_map.html">Site Map</a></li>
+          <li><a href="style_guide.html" aria-current="page">Style Guide</a></li>
+          <li><a href="ethical_response.html">Ethics Response</a></li>
+          <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+        </ul>
+      </nav>
+
+      <!-- 面包屑 -->
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="style_guide.html">Style Guide</a></li>
+        <li>Reflective Design</li>
+      </ul>
+
+      <!-- 手风琴外层 -->
+      <div class="accordion">
+
+        <!-- Intro -->
+        <div class="accordion-item open">
+          <button class="accordion-header">Intro</button>
+          <div class="accordion-content">
+            <h1>Reflective Design</h1>
+            <p>The focus of this section of the Style Guide is supporting user <strong>meaning</strong> and
+              <strong>identity</strong>.</p>
+          </div>
+        </div>
+
+        <!-- Values Mapping -->
+        <div class="accordion-item">
+          <button class="accordion-header">Values Mapping</button>
+          <div class="accordion-content">
+            <h2>Values Mapping</h2>
+            <img src="assets/values-mapping.png" alt="Values Mapping 表格截图" class="responsive-img" />
+          </div>
+        </div>
+
+        <!-- Imagery & Tone -->
+        <div class="accordion-item">
+          <button class="accordion-header">Imagery &amp; Tone</button>
+          <div class="accordion-content">
+            <h2>Imagery and Tone</h2>
+            <p>
+              <strong>Identity & Emotional Tone:</strong>
+              我们希望营造赛博朋克画面氛围——高对比度的霓虹绿配合暗色背景，传递科技感、紧张感与团队归属感，吸引热爱策略与协作的玩家。<br>
+              <em>We aim to create a cyberpunk aesthetic—pairing high-contrast neon green with a dark backdrop to convey
+                a sense of technological intensity, tension, and team belonging, appealing to players who thrive on
+                strategy and collaboration.</em>
+            </p>
+
+            <div class="gallery m-t-3">
+              <img src="assets/char1.png" alt="示例图 1" class="reflective-img" />
+              <img src="assets/char2.png" alt="示例图 2" class="reflective-img" />
+              <img src="assets/char3.png" alt="示例图 3" class="reflective-img" />
+            </div>
+            <h3>Homepage Text Example</h3>
+            <blockquote class="example-text">
+              欢迎来到 <strong>Focus 联盟</strong>——在这里，你可以分享尖端战术、组建战队开黑，并随时获取最新的赛博世界动态。<br>
+              <em>Welcome to <strong>Focus Alliance</strong>—where you can share cutting-edge tactics, form squads for
+                co-op play, and stay updated on the latest cyber-world developments.</em>
+            </blockquote>
+
+          </div>
+        </div>
+
+        <!-- Language & Expression -->
+        <div class="accordion-item">
+          <button class="accordion-header">Language &amp; Expression</button>
+          <div class="accordion-content">
+            <h2>Reflective Language and Expression</h2>
+            <h3>Checklist</h3>
+            <ul>
+              <li>Inclusive Language：避免刻板或排他用语，尊重所有玩家身份。</li>
+              <li>Complexity of Language：使用清晰、易懂的词汇，符合 WCAG 3.1.1 要求。</li>
+              <li>Words Reflect Values：用词一致地传递包容、赋能与协作。</li>
+              <li>Tone Supports Engagement：语调应亲切、鼓舞，激发长期社区归属感。</li>
+            </ul>
+            <h3>Original Text</h3>
+            <pre
+              class="code-sample">// Original: Welcome to our forum. This place is for gamers to talk and have fun.</pre>
+            <h3>Revised Text</h3>
+            <pre class="code-sample">// Revised: 欢迎来到 Focus 联盟！这里汇聚热爱策略与竞技的玩家，畅谈战术、组队开黑，一起在赛博世界中破局。</pre>
+            <p><strong>Annotation:</strong>
+            <ol>
+              <li>“This place is for gamers to talk and have fun” → “汇聚热爱策略与竞技的玩家” 更明确社区定位；</li>
+              <li>“组队开黑” 为玩家熟悉术语，提升代入感；</li>
+              <li>“赛博世界” 一词与整体视觉一致，强化体验一致性。</li>
+            </ol>
+            </p>
+          </div>
+        </div>
+
+        <!-- Seeing Ourselves -->
+        <div class="accordion-item">
+          <button class="accordion-header">Seeing Ourselves</button>
+          <div class="accordion-content">
+            <h2>Seeing Ourselves</h2>
+            <p>以下列表展示当前社区中注册的成员（动态内容）：</p>
+            <!-- 动态内容容器 -->
+            <section id="community-list"></section>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.accordion -->
+
+      <section id="accessibility-audit" class="m-y-5">
+        <h2>可访问性审查简短报告 / Accessibility Audit Findings</h2>
+
+        <!-- Issue 1 -->
+        <div class="audit-item m-t-3">
+          <h3>1. 未使用 &lt;fieldset&gt; 分组相关表单控件</h3>
+          <p>
+            <strong>检查员解释 / Why:</strong><br>
+            逻辑相关的输入控件应包含在 <code>&lt;fieldset&gt;</code> 元素内，以便用户代理（如屏幕阅读器）理解它们之间的关系。<br>
+            <em>Groups of logically related input elements must be contained within a <code>&lt;fieldset&gt;</code>
+              element (H71).</em>
+          </p>
+          <p><strong>原始代码 / Original:</strong></p>
+          <pre><code>
+      <label for="photo">Upload Photo:</label>
+      <input type="file" id="photo" name="photo" accept="image/*">
+          </code></pre>
+          <p><strong>修复建议 / Fix:</strong></p>
+          <pre><code>
+      <fieldset>
+        <legend>Upload Your Photo</legend>
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+        <!-- 其它相关字段 -->
+      </fieldset>
+          </code></pre>
+        </div>
+
+        <!-- Issue 2 -->
+        <div class="audit-item m-t-3">
+          <h3>2. 文件上传控件标签与输入分离</h3>
+          <p>
+            <strong>检查员解释 / Why:</strong><br>
+            每个表单控件必须通过 <code>for</code> 属性与其标签关联，以便屏幕阅读器能够匹配标签。<br>
+            <em>Each form control must have an accessible name and label association (H44).</em>
+          </p>
+          <p><strong>原始代码 / Original:</strong></p>
+          <pre><code>
+      <label>Upload Photo:</label>
+      <input type="file" id="photo" name="photo">
+          </code></pre>
+          <p><strong>修复建议 / Fix:</strong></p>
+          <pre><code>
+      <label for="photo">Upload Photo:</label>
+      <input type="file" id="photo" name="photo">
+          </code></pre>
+        </div>
+
+        <!-- Issue 3 -->
+        <div class="audit-item m-t-3">
+          <h3>3. 焦点指示样式对比不足</h3>
+          <p>
+            <strong>检查员解释 / Why:</strong><br>
+            键盘导航用户必须清晰看到当前焦点位置，否则会在页面中迷失。<br>
+            <em>Focus indicator must be clearly visible and have sufficient contrast (WCAG 2.4.7).</em>
+          </p>
+          <p><strong>原始样式 / Original CSS:</strong></p>
+          <pre><code>
+      button:focus { outline: none; }
+      a:focus { text-decoration: none; }
+          </code></pre>
+          <p><strong>修复建议 / Fix:</strong></p>
+          <pre><code>
+      button:focus,
+      a:focus {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+      }
+          </code></pre>
+        </div>
+      </section>
+
+
+      <!-- Key Concepts 四宫格 -->
+      <section id="key-concepts" class="concept-grid m-t-5">
+        <div class="concept-card">
+          <h3>Dynamic Content Builds Connection</h3>
+          <ul>
+            <li>Displaying real community content helps users see themselves reflected in the site’s purpose and
+              identity.</li>
+            <li>Dynamic content can strengthen belonging, pride, and emotional engagement.</li>
+            <li>Thoughtful framing and styling matter as much as data retrieval.</li>
+          </ul>
+        </div>
+        <div class="concept-card">
+          <h3>Fetching and Displaying Data Safely</h3>
+          <ul>
+            <li>Use <code>fetch()</code> + <code>.then()</code> or <code>async/await</code> and handle errors.</li>
+            <li>Always check for <code>null</code> before rendering and show fallback messaging.</li>
+            <li>Separate data retrieval from HTML building/styling in your code.</li>
+          </ul>
+        </div>
+        <div class="concept-card">
+          <h3>Creating Meaningful HTML Structures</h3>
+          <ul>
+            <li>Use semantic tags like <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, and proper headings.
+            </li>
+            <li>Design layout to match site identity, values, and tone.</li>
+            <li>Use backticks (<code>`</code>) for template literals when inserting <code>${member.name}</code>.</li>
+          </ul>
+        </div>
+        <div class="concept-card">
+          <h3>Customising Appearance with CSS</h3>
+          <ul>
+            <li>Create your own CSS classes for dynamic content.</li>
+            <li>Maintain visual consistency with spacing, typography, and colors.</li>
+            <li>Ensure dynamic content feels integrated, not “bolted on.”</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- 使用 ES 模块加载页面脚本 -->
+  <script type="module" src="js/reflective_design.js"></script>
+</body>
+
+</html>

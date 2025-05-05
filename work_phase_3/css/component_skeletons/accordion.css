@@ -1,0 +1,65 @@
+/* 1. 手风琴容器整体布局 */
+.accordion {
+    display: flex;
+    flex-direction: column;  /* 垂直排列 */
+    gap: 1rem;               /* 各面板间距 */
+  }
+  
+  /* 2. 每个手风琴项的外壳 */
+  .accordion-item {
+    border-radius: 8px;      /* 圆角 */
+    overflow: hidden;        /* 隐藏溢出，等 JS 展开时才显示 */
+    transition: all 0.3s ease; /* 过渡动画 */
+  }
+  
+  /* 3. 折叠面板的按钮（一级标题） */
+  .accordion-header {
+    padding: 1rem;           /* 内边距 */
+    font-weight: bold;       /* 加粗醒目 */
+    font-size: 1rem;         /* 合适大小 */
+    width: 100%;             /* 占满容器 */
+    text-align: left;        /* 左对齐 */
+    border: none;            /* 去掉默认边框 */
+    cursor: pointer;         /* 手型提示可点击 */
+    background-color: var(--primary-color); /* 页面主色 */
+    color: rgb(59, 140, 221);            /* 白色文字更醒目 */
+  }
+  
+  /* 4. 折叠面板的内容区域 */
+  .accordion-content {
+    max-height: 0;                 /* 初始不可见 */
+    overflow-y: auto;              /* 展开后可滚动 */
+    padding: 0 1rem;               /* 左右留空，顶部底部 0 */
+    transition:
+      max-height 0.4s ease,        /* 内容高度过渡 */
+      padding 0.4s ease;           /* 填充过渡 */
+    background: rgb(56, 60, 65);             /* 白底，与页面区分 */
+    font-size: 0.95rem;            /* 略小于正文 */
+  }
+  
+  /* 5. 展开状态下显示内容 */
+  .accordion-item.is-open .accordion-content {
+    max-height: 1000px; /* 足够大以展示所有内容 */
+    padding: 1rem;      /* 顶部底部内边距 */
+  }
+  
+  /* 手风琴内容展开时的样式 */
+.accordion-item.open .accordion-content {
+    padding: 1rem;      /* 内边距 */
+    max-height: 500px;  /* 任意足够展开的高度 */
+  }
+  
+  /* 嵌套手风琴的整体容器 */
+.accordion.nested {
+    margin-left: 1rem;           /* 整体左缩进 */
+    border-left: 3px solid var(--accent2-color); /* 左侧一条竖线 */
+    padding-left: 1rem;          /* 内容与竖线保持距离 */
+  }
+  
+  /* 二级标题仍使用同样样式，但让宽度撑满容器 */
+  .accordion.nested .accordion-header {
+    width: 100%;
+  }
+  
+  /* 二级内容区复用已有的收放样式，无需额外改动 */
+  

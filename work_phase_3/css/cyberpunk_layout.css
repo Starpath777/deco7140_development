@@ -1,0 +1,148 @@
+/* Global Settings */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+:root {
+  /* Existing color palette */
+  --color-primary: #0ff0fc;
+  --color-accent: #ff007f;
+  --secondary-color: #3498db;
+  --color-bg: #0a0a0a;
+  --color-text: #e0e0e0;
+  /* Additional neon accents */
+  --neon-green: #39ff14;
+  --neon-pink: #ff207c;
+  --neon-blue: #00ffff;
+}
+body {
+  font-family: 'Exo', Georgia, 'Times New Roman', serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  padding: var(--space-2);
+}
+
+/* Container wrapper for all content */
+.container {
+  background: rgba(10, 10, 10, 0.8);
+  padding: var(--space-3) var(--space-2);
+  margin: 0 auto;
+  border: 2px solid var(--color-primary);
+  border-radius: 8px;
+}
+
+/* Section styling */
+section, article {
+  padding: var(--space-2) 0;
+  margin-bottom: var(--space-4);
+}
+
+/* Headings with neon glow */
+h1, h2, h3 {
+  color: var(--color-primary);
+  text-shadow:
+    0 0 5px var(--color-primary),
+    0 0 10px var(--neon-green),
+    0 0 20px var(--neon-pink);
+}
+
+/* Responsive Image Grid */
+.gallery, .reflective-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-2);
+}
+.gallery img, .reflective-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid var(--neon-green);
+  border-radius: 4px;
+  box-shadow: 0 0 8px var(--neon-pink);
+}
+
+/* Form Container */
+#community-section {
+  max-width: 600px;
+  background: rgba(20, 20, 20, 0.9);
+  margin: var(--space-3) auto;
+  padding: var(--space-3);
+  border: 1px solid var(--neon-blue);
+  border-radius: 6px;
+}
+
+/* Form Fields */
+#community-form .form-group input,
+#community-form .form-group textarea,
+#community-form .form-group input[type="file"] {
+  background: #111;
+  color: var(--color-text);
+  border: 1px solid var(--color-primary);
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+#community-form input:focus,
+#community-form textarea:focus {
+  outline: 2px solid var(--color-accent);
+  box-shadow: 0 0 5px var(--color-accent);
+}
+
+/* Submit Button */
+#community-form button {
+  background: var(--color-primary);
+  color: #111;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--neon-blue);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+#community-form button:hover {
+  background: var(--neon-pink);
+  box-shadow: 0 0 15px var(--neon-pink), 0 0 30px var(--neon-green);
+  transform: translateY(-2px);
+}
+#community-form button:active {
+  transform: translateY(1px);
+}
+
+/* Links and Breadcrumbs */
+a {
+  color: var(--neon-green);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--neon-pink);
+}
+.breadcrumbs li + li::before {
+  content: ">";
+  padding: 0 0.5rem;
+  color: var(--color-text);
+}
+.breadcrumbs a {
+  color: var(--neon-blue);
+}
+
+/* Utility class for comfortable text blocks */
+.text-block {
+  padding: var(--space-2);
+  background: rgba(15, 15, 15, 0.5);
+  border-left: 4px solid var(--neon-green);
+  border-radius: 4px;
+}
+
+/* 图片/媒体自适应 */  
+img, video, iframe {  
+  max-width: 100%;  
+  height: auto;  
+}  
+
+/* 代码段或长词自动换行 */  
+pre, code, .explanation, .annotation {  
+  overflow-wrap: break-word;   /* 或者 word-wrap: break-word; */  
+  word-break: break-word;  
+}  
+

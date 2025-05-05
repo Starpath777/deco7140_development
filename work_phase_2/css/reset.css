@@ -73,12 +73,6 @@ img, picture, video, canvas, svg {
   height: auto;
 }
 
-/* 移除动画和过渡 */
-* {
-  animation: none !important;
-  transition: none !important;
-  scroll-behavior: auto !important;
-}
 
 /* 禁用文本缩放和选择 */
 html {
