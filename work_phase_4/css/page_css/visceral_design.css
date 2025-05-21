@@ -1,0 +1,50 @@
+/*
+ * Gallery Image Styles for Visceral Design (感官设计画廊图像样式注释版)
+ * 此文件为画廊组件中的图像提供响应式和交互动效，以在不同视口上营造视觉冲击感。
+ */
+
+/*
+ * 1. Mobile base image dimensions
+ *    移动端基础图像尺寸
+ *    - width: 60%;          Image occupies 60% of container width (图像宽度为容器的60%)
+ *    - height: 200px;       Fixed height for consistency (固定高度，保持一致)
+ *    - object-fit: cover;   Crop and scale image to fill while preserving aspect ratio (裁剪并缩放以填充容器，同时保持纵横比)
+ *    - object-position: top; Align image top when cropping (裁剪时图像顶部对齐)
+ *    - position: relative;  Establish positioning context if overlay used (设置相对定位，方便覆盖元素)
+ *    - cursor: pointer;     Indicate clickability (鼠标样式为指针，提示可点击)
+ *    - border-radius: 8px;  Rounded corners for softened appearance (圆角边框，柔化视觉)
+ */
+ .gallery img {
+  width: 60%;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/*
+ * 2. Hover micro-interaction
+ *    鼠标悬停微交互动效
+ *    - transform: scale(1.05);        Slightly enlarge image for feedback (略微放大图像，提供反馈)
+ *    - transition: transform 0.3s ease; Smooth scaling animation (缩放过渡动画)
+ */
+.gallery img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/*
+ * 3. Desktop adjustments via media query
+ *    桌面端媒体查询调整
+ *    - @media screen and (min-width: 768px): Breakpoint for tablet and above (平板及以上断点)
+ *      - width: 100%;       Expand image to full container width (图像宽度扩展至100%)
+ *      - height: 300px;     Increase height for larger viewports (增高以适应更大视口)
+ */
+@media screen and (min-width: 768px) {
+  .gallery img {
+    width: 100%;
+    height: 300px;
+  }
+}

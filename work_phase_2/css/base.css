@@ -1,47 +1,46 @@
-
 /* ========================
-   Font Imports
+   Font Imports / 字体引入
 =========================== */
-@import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap'); /* 标题专用字体：Bytesized，科技感强 */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap'); /* 正文字体：Urbanist，可调权重 */
 
 /* ========================
-   Colour Variables (Theme)
+   Colour Variables (Theme) / 颜色主题变量
 =========================== */
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #3498db;
-  --accent-color: #e74c3c;
-  --text-color: #333;
-  --background-color: #f5f5f5;
+  --primary-color: #2c3e50;        /* 主要背景色 - 深灰蓝 */
+  --secondary-color: #3498db;      /* 次要色调 - 鲜亮蓝 */
+  --accent-color: #e74c3c;         /* 强调色 - 红色按钮或警示 */
+  --text-color: #333;              /* 默认文字颜色 */
+  --background-color: #f5f5f5;     /* 整体背景浅灰色 */
 }
 
 /* ========================
-   Global Reset & Defaults
+   Global Reset & Defaults / 全局初始化与基础设置
 =========================== */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* 使用 border-box 模型，便于布局控制 */
 }
 
 html {
-  font-size: 16px;
-  scroll-behavior: smooth;
+  font-size: 16px;              /* 设定根字号（用于 rem 单位） */
+  scroll-behavior: smooth;      /* 平滑滚动 */
 }
 
 body {
-  font-family: 'Urbanist', sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6;
+  font-family: 'Urbanist', sans-serif;        /* 页面默认字体 */
+  background-color: var(--background-color);  /* 背景色 */
+  color: var(--text-color);                   /* 文字颜色 */
+  line-height: 1.6;                           /* 行距提升可读性 */
 }
 
 /* ========================
-   Typography (Title + Body)
+   Typography / 排版样式：标题 + 正文
 =========================== */
 h1, h2, h3 {
-  font-family: 'Bytesized', sans-serif;
+  font-family: 'Bytesized', sans-serif; /* 所有标题使用 Bytesized 字体 */
 }
 
 h1 {
@@ -71,28 +70,28 @@ p, li, a, label, button, input, textarea {
 }
 
 /* ========================
-   Layout & Structure
+   Layout & Structure / 布局与结构
 =========================== */
 .container {
   width: 100%;
-  max-width: 960px;
+  max-width: 960px;    /* 限制最大宽度，保持内容居中 */
   margin: 0 auto;
   padding: 1rem;
 }
 
 header, footer {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color); /* 头尾统一深色背景 */
   color: white;
   padding: 1.5rem 1rem;
   text-align: center;
 }
 
 footer {
-  font-size: 0.875rem;
+  font-size: 0.875rem; /* 页脚字体略小 */
 }
 
 nav {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color); /* 导航栏蓝色背景 */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -106,24 +105,25 @@ nav a {
 
 nav a:hover,
 nav a:focus {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color); /* 鼠标悬停或聚焦时背景变暗 */
   outline: none;
 }
 
 main {
-  padding: 2rem 1rem;
+  padding: 2rem 1rem; /* 主内容上下内边距较大 */
 }
 
 .card {
   background-color: white;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* 轻微投影 */
   padding: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
+/* 按钮样式 */
 .button {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color); /* 使用强调色红 */
   color: white;
   padding: 0.75rem 1.25rem;
   border: none;
@@ -133,14 +133,16 @@ main {
 }
 
 .button:focus {
-  outline: 3px solid var(--secondary-color);
+  outline: 3px solid var(--secondary-color); /* 获取焦点时蓝色外圈 */
 }
 
+/* 所有 focus 元素通用外圈样式 */
 :focus {
   outline: 3px solid var(--secondary-color);
   outline-offset: 2px;
 }
 
+/* 屏幕阅读器可访问的隐藏文本 */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -152,113 +154,119 @@ main {
   border: 0;
 }
 
+/* 桌面端增加内容 padding */
 @media (min-width: 768px) {
   .container {
     padding: 2rem;
   }
 }
 
+/* ========================
+   Highlight Tooltip / 高亮提示说明组件
+=========================== */
 .highlight-tooltip {
-    background-color: #fff3b0; /* 柔和黄色背景 */
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-    font-style: italic;
-    position: relative;
-    cursor: help;
-  }
-  
-  /* Tooltip 本体 */
-  .highlight-tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 130%;
-    background-color: #333;
-    color: white;
-    padding: 0.5rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    line-height: 1.3;
-    width: max-content;
-    max-width: 240px;
-    white-space: normal;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 100;
-  }
-  
-  /* 小箭头 */
-  .highlight-tooltip::before {
-    content: "";
-    position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 6px;
-    border-style: solid;
-    border-color: transparent transparent #333 transparent;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  /* 悬停时显示 tooltip */
-  .highlight-tooltip:hover::after,
-  .highlight-tooltip:hover::before {
-    opacity: 1;
-  }
-  
-  /* 翻页卡 */
-  /* Flip Card Container */
-  .flip-card {
-    width: 260px;
-    height: 180px;
-    perspective: 1000px;
-  }
-  
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.8s ease;
-  }
-  
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .flip-card-front,
-  .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 1rem;
-  }
-  
-  .flip-card-front {
-    background-color: #2c3e50;
-  }
-  
-  .flip-card-back {
-    background-color: #3498db;
-    transform: rotateY(180deg);
-  }
-  
-  
-  /* grid 布局容器 */
-  .flip-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    margin-top: 2rem;
-  }
-  
+  background-color: #fff3b0; /* 柔和黄色背景 */
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-style: italic;
+  position: relative;
+  cursor: help;
+}
+
+/* 悬浮提示内容 */
+.highlight-tooltip::after {
+  content: attr(data-tooltip); /* 提取自定义属性 */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 130%;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  width: max-content;
+  max-width: 240px;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+
+/* 提示框小箭头 */
+.highlight-tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* 悬停时显示 tooltip */
+.highlight-tooltip:hover::after,
+.highlight-tooltip:hover::before {
+  opacity: 1;
+}
+
+/* ========================
+   Flip Card / 翻页卡片组件
+=========================== */
+.flip-card {
+  width: 260px;
+  height: 180px;
+  perspective: 1000px; /* 设置透视效果 */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* 保持3D效果 */
+  transition: transform 0.8s ease; /* 平滑翻转 */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); /* 悬停时 Y轴翻转 */
+}
+
+/* 卡片正反面通用样式 */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden; /* 隐藏背面 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+}
+
+.flip-card-front {
+  background-color: #2c3e50;
+}
+
+.flip-card-back {
+  background-color: #3498db;
+  transform: rotateY(180deg); /* 背面预旋转 */
+}
+
+/* ========================
+   Flip Grid 布局容器
+=========================== */
+.flip-grid {
+  display: grid;
+  gap: 2rem; /* 项目间距 */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* 响应式列宽 */
+  margin-top: 2rem;
+}

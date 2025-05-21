@@ -1,0 +1,222 @@
+/*
+ * Base Styles (基础样式注释版)
+ * 此文件定义全局CSS变量、通用字体和标题样式，确保跨视口一致性。
+ */
+
+/*
+ * 1. CSS 变量定义
+ *    Root-level CSS custom properties (根级自定义属性)
+ *    - --color-primary:       Primary accent color (主要强调色)
+ *    - --color-accent:        Secondary accent color (次要强调色)
+ *    - --secondary-color:     Additional theme color (附加主题色)
+ *    - --color-bg:            Page background color (页面背景色)
+ *    - --color-text:          Default text color (默认文本色)
+ */
+:root {
+  --color-primary: #0ff0fc;
+  --color-accent: #ff007f;
+  --secondary-color: #3498db;
+  --color-bg: #0a0a0a;
+  --color-text: #e0e0e0;
+}
+
+/*
+* 2. 基础页面设置
+*    Base page styles (基础页面样式)
+*    - font-family:             Set default font stack (设置默认字体堆栈)
+*    - color:                   Use text color variable (应用文本颜色变量)
+*/
+body {
+  font-family: 'Exo', Georgia, 'Times New Roman', serif;
+  color: var(--color-text);
+}
+
+/*
+* 3. 通用标题样式
+*    Headings typography (标题排版)
+*    - h1:                     Largest heading (最大级别标题)
+*        font-size: 6rem;      Font size for hero sections (主视觉区标题大小)
+*        font-weight: 700;     Bold weight for emphasis (加粗以突出)
+*    - h2:                     Section heading (章节标题)
+*        font-size: 3rem;      Moderate size for subheadings (适中大小)
+*        font-weight: 600;     Semi-bold for hierarchy (半粗以区分层次)
+*    - h3:                     Sub-section heading (小节标题)
+*        font-size: 1.5rem;    Smaller size for tertiary headings (更小级别标题)
+*        font-weight: 500;     Medium weight (中等粗细)
+*/
+h1 {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/*
+* 4. 响应式断点：移动端标题调整
+*    Responsive headings for mobile (移动端响应式标题)
+*    - @media (max-width: 768px): Apply on small screens (在小屏幕上应用)
+*        h1: font-size: 2rem;   Reduce size for readability (减小以便阅读)
+*        h2: font-size: 1.6rem; Same reason (同上)
+*        h3: font-size: 1.3rem; Ensure hierarchy is maintained (保持层级关系)
+*/
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* 
+
+/* Search bar */
+#search-wrapper {
+  display: inline-block;
+  position: relative;
+  right: 7px;
+  margin-left: 50px;
+}
+
+#search-wrapper.search-expanded #close-icon:before {
+  -webkit-animation: cross-1-in 0.25s linear 0s forwards;
+  animation: cross-1-in 0.25s linear 0s forwards;
+}
+
+
+#search-wrapper.search-expanded #close-icon:after {
+  -webkit-animation: cross-2-in 0.25s linear 0.2s forwards;
+  animation: cross-2-in 0.25s linear 0.2s forwards;
+}
+
+#search-wrapper.search-expanded:after {
+  -webkit-animation: lens-out 0.5s linear 1 forwards;
+  animation: lens-out 0.5s linear 1 forwards;
+}
+
+#search-wrapper:after {
+  position: absolute;
+  bottom: 3px;
+  right: -9px;
+  display: block;
+  content: "";
+  width: 14px;
+  height: 2px;
+  background-color: #000000;
+  -webkit-transform: rotate(45deg) scaleX(0);
+  transform: rotate(45deg) scaleX(0);
+  transform-origin: 0 50%;
+  -webkit-animation: lens-in 0.6s linear 0.9s forwards;
+  animation: lens-in 0.6s linear 0.9s forwards;
+}
+
+#search-wrapper #search {
+  background: none;
+  border: 2px solid;
+  border-color: #000000;
+  outline: none;
+  padding: 0 9px;
+  border-radius: 1000px;
+  width: 0;
+  transition: all 0.3s 0.6s;
+  font-size: 12px;
+}
+
+#search-wrapper #search::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#search-wrapper #search:focus {
+  width: 270px;
+  padding: 7px 15px;
+}
+
+
+#search-wrapper #close-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  transition: 0.2s all;
+  display: none;
+}
+
+#search-wrapper #close-icon[style*="display: block"] {
+  color: red;
+}
+
+#search-wrapper #close-icon[style*="display: block"]:before {
+  -webkit-transform: rotate(45deg) scaleX(1) translateY(10px);
+  transform: rotate(45deg) scaleX(1) translateY(10px);
+}
+
+#search-wrapper #close-icon[style*="display: block"]:after {
+  -webkit-transform: rotate(-45deg) scaleX(1) translateY(-10px);
+  transform: rotate(-45deg) scaleX(1) translateY(-10px);
+}
+
+#search-wrapper #close-icon:before,
+#search-wrapper #close-icon:after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #878787;
+  transform-origin: 100% 50%;
+}
+
+#search-wrapper #close-icon:before {
+  -webkit-transform: rotate(45deg) scaleX(0) translateY(10px);
+  transform: rotate(45deg) scaleX(0) translateY(10px);
+}
+
+#search-wrapper #close-icon:after {
+  -webkit-transform: rotate(-45deg) scaleX(0) translateY(-10px);
+  transform: rotate(-45deg) scaleX(0) translateY(-10px);
+}
+
+#search-wrapper #close-icon.closing:before {
+  -webkit-animation: cross-1-out 0.25s linear 0s forwards;
+  animation: cross-1-out 0.25s linear 0s forwards;
+}
+
+#search-wrapper #close-icon.closing:after {
+  -webkit-animation: cross-2-out 0.25s linear 0.2s forwards;
+  animation: cross-2-out 0.25s linear 0.2s forwards;
+}
+
+#search-wrapper:after {
+  position: absolute;
+  bottom: 3px;
+  right: -9px;
+  display: block;
+  content: "";
+  width: 14px;
+  height: 2px;
+  background-color: #000000;
+  -webkit-transform: rotate(45deg) scaleX(0);
+  transform: rotate(45deg) scaleX(0);
+  transform-origin: 0 50%;
+  -webkit-animation: lens-in 0.6s linear 0.9s forwards;
+  animation: lens-in 0.6s linear 0.9s forwards;
+}
+
+*/

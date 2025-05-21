@@ -1,0 +1,37 @@
+/*
+ * Form Component Reset Styles (表单组件重置样式注释版)
+ * 此文件重置表单元素的默认样式，确保跨浏览器一致性。
+ */
+
+/*
+ * 1. Reset base styles for form elements
+ *    重置表单元素的基础样式
+ *    - label, input, textarea, button:
+ *      display: block;     Ensure each element starts on a new line (块级显示，换行展示)
+ *      margin: 0;          Remove default margins (移除默认外边距)
+ *      padding: 0;         Remove default padding (移除默认内边距)
+ *      font: inherit;       Inherit font styles from parent (继承父元素字体)
+ *      box-sizing: border-box; Include border and padding in width/height (将边框和内边距计入元素宽高)
+ */
+ label,
+ input,
+ textarea,
+ button {
+   display: block;
+   margin: 0;
+   padding: 0;
+   font: inherit;
+   box-sizing: border-box;
+ }
+ 
+ /*
+  * 2. Button default display and cursor
+  *    按钮默认样式
+  *    - display: inline-block;  Allow custom width/height while behaving like inline element (行内块级显示，可设置尺寸)
+  *    - cursor: pointer;        Show pointer on hover to indicate clickable (鼠标样式为指针，提示可点击)
+  */
+ button {
+   display: inline-block;
+   cursor: pointer;
+ }
+ 
