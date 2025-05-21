@@ -1,0 +1,69 @@
+/* ========== 画廊图像样式 / Gallery Image Styles ========== */
+.gallery img { /* Target each image in gallery / 选择 .gallery 内的 img */
+  width: 100%; /* Fill full container width / 宽度填满父容器 */
+  max-width: 240px; /* Maximum width limit / 最大宽度限制为240px */
+  height: auto; /* Maintain aspect ratio / 高度自适应保持纵横比 */
+  display: inline-block; /* Inline-block for horizontal flow / 行内块级显示，方便并排 */
+  margin-bottom: 1rem; /* Space below image / 下面外边距1rem */
+} /* End .gallery img */
+
+/* ========== 卡片基础样式 / Card Base Styles ========== */
+.card { /* Card container / 卡片容器 */
+  background: var(--card-bg, #fff); /* Background using CSS variable or fallback white / 背景颜色使用变量或回退#fff */
+  border-radius: 4px; /* Rounded corners / 圆角4px */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Shadow for depth effect / 阴影增加层次感 */
+  overflow: hidden; /* Hide overflowing content / 隐藏溢出内容 */
+} /* End .card */
+
+/* ========== 头像样式 / Card Image Top Styles ========== */
+.card-img-top { /* Top image in card / 卡片顶部图片 */
+  width: 100%; /* Full width of card / 宽度填满卡片 */
+  display: block; /* Block-level display / 块级显示 */
+  object-fit: cover; /* Crop and scale image to fill container / 等比裁剪并填充 */
+  height: 120px; /* Fixed height for consistency / 固定高度120px */
+} /* End .card-img-top */
+
+/* ========== 内容区 / Card Body Styles ========== */
+.card-body { /* Container for card content / 卡片内容区 */
+  padding: 0.75rem; /* Inner padding / 内边距0.75rem */
+} /* End .card-body */
+
+.card-title { /* Card title text / 卡片标题文本 */
+  margin: 0 0 0.5rem; /* Bottom margin for spacing / 下外边距0.5rem */
+  font-size: 1rem; /* Title font size / 字体大小1rem */
+} /* End .card-title */
+
+.card-text { /* Card body text / 卡片正文文本 */
+  margin: 0; /* Reset default margin / 重置默认外边距 */
+  font-size: 0.875rem; /* Text font size / 字体大小0.875rem */
+  color: var(--text-muted); /* Muted text color from CSS variable / 使用静音文本颜色 */
+} /* End .card-text */
+
+/* ========== 底部间距实用类 / Margin Bottom Utility Class ========== */
+.mb-3 { /* Utility for bottom margin / 底部外边距辅助类 */
+  margin-bottom: 1rem; /* Apply bottom margin / 设置底部外边距1rem */
+} /* End .mb-3 */
+
+/* ========== 概念网格布局 / Concept Grid Layout ========== */
+.concept-grid { /* Grid container for concept cards / 概念卡片网格容器 */
+  display: grid; /* CSS Grid layout / 网格布局 */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Responsive columns auto-fit / 自适应列 */
+  gap: 1rem; /* Gap between grid items / 网格间距1rem */
+} /* End .concept-grid */
+
+/* ========== 概念卡片样式 / Concept Card Styles ========== */
+.concept-card { /* Individual concept card / 单个概念卡片 */
+  border: 1px solid var(--color-primary); /* Border using primary theme color / 主色边框 */
+  border-radius: 4px; /* Rounded corners / 圆角4px */
+  padding: 1rem; /* Inner padding / 内边距1rem */
+} /* End .concept-card */
+
+.concept-card h3 { /* Heading inside concept card / 概念卡片内标题 */
+  margin-top: 0; /* Remove top margin / 去除上外边距 */
+  font-size: 1.1rem; /* Heading font size / 字体大小1.1rem */
+} /* End .concept-card h3 */
+
+.concept-card ul { /* Unordered list inside concept card / 概念卡片内无序列表 */
+  margin: 0.5rem 0 0; /* Top margin and reset sides / 上外边距0.5rem */
+  padding-left: 1.2rem; /* Indent list items / 左内边距1.2rem */
+} /* End .concept-card ul */

@@ -1,0 +1,147 @@
+/* ========== MENUS 菜单样式 ========== */ /* 区块分隔，标识菜单样式区域 / Section divider marking menu styles */
+
+/* === 基础菜单样式 / Base styles === */ /* 子区块标题，基础菜单布局与重置 / Subsection header for base menu layout and reset */
+nav ul { /* 选择 <nav> 下的 <ul> 元素作为菜单列表容器 / Selects the <ul> element within <nav> as the menu container */
+  display: flex; /* 使用 Flexbox 布局，让菜单项横向排列 / Use Flexbox to arrange menu items horizontally */
+  flex-direction: row; /* 设置主轴方向为行（从左到右）/ Set main axis direction to row */
+  justify-content: space-around; /* 在容器内均匀分布菜单项 / Distribute menu items evenly with space-around */
+  list-style: none; /* 移除默认列表项目符号 / Remove default list bullets */
+  padding: 0; /* 清除默认内边距 / Remove default padding */
+  margin: 0; /* 清除默认外边距 / Remove default margin */
+} /* 结束 nav ul 规则 / End nav ul rule */
+
+/* === 响应式控制样式 / Responsive control === */ /* 子区块标题，处理桌面/移动设备导航显示 / Subsection header for desktop/mobile nav display */
+/* 在屏幕宽度 ≥ 768px 时应用以下样式 / Apply below styles when viewport width ≥ 768px */
+@media screen and (min-width: 768px) {
+  #nav-desktop { display: block; } /* 在大屏幕显示桌面导航 / Show desktop navigation on larger screens */
+  #nav-mobile  { display: none; } /* 隐藏移动端导航 / Hide mobile navigation on larger screens */
+}
+/* 在屏幕宽度 < 768px 时应用以下样式 / Apply below styles when viewport width < 768px */
+@media screen and (max-width: 767px) {
+  #nav-desktop { display: none; } /* 隐藏桌面导航 / Hide desktop navigation on small screens */
+}
+
+/* Mobile Navigation Bar (移动端底部菜单) */ /* 子区块标题，移动设备底部导航 / Subsection header for mobile bottom nav */
+#nav-mobile { /* 选择移动端导航容器 / Select mobile navigation container */
+  position: fixed; /* 固定定位于视口底部 / Fix to viewport bottom */
+  bottom: 0; /* 距离视口底部 0 / 0 from viewport bottom */
+  left: 0; /* 距离视口左侧 0 / 0 from viewport left */
+  width: 100%; /* 宽度占满视口 / Full viewport width */
+  background-color: var(--secondary-color); /* 背景色使用次级主题色 / Use secondary theme color */
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* 上方阴影提升悬浮感 / Top shadow for elevation effect */
+} /* End #nav-mobile */
+
+/* Desktop Navigation Bar (桌面端导航栏) */
+#nav-desktop { /* 选择桌面端导航容器 / Select desktop navigation container */
+  position: fixed; /* 固定在视口顶部 / Fix to viewport top */
+  top: 0; /* 距离视口顶部 0 / 0 from viewport top */
+  left: 0; /* 距离视口左侧 0 / 0 from viewport left */
+  width: 100%; /* 宽度占满视口 / Full viewport width */
+  background-color: var(--color-primary); /* 背景色使用主主题色 / Use primary theme color */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 底部阴影增加层次感 / Bottom shadow for depth */
+  display: none; /* 默认隐藏，待媒体查询切换 / Hidden by default, toggled by media queries */
+  z-index: 1000; /* 置于顶层，覆盖其他内容 / Place on top layer */
+} /* End #nav-desktop */
+
+/* Toggle Desktop/Mobile Menus (切换桌面/移动端) */
+@media screen and (min-width: 768px) { /* ≥768px 时切换显示模式 / Toggle display for ≥768px */
+  #nav-mobile  { display: none; } /* 隐藏移动导航 / Hide mobile nav */
+  #nav-desktop { display: block; } /* 显示桌面导航 / Show desktop nav */
+}
+
+/* Menu List Items Layout (菜单项布局) */
+#nav-mobile ul, /* 移动端菜单列表 / Mobile nav list */
+#nav-desktop ul { /* 桌面端菜单列表 / Desktop nav list */
+  display: flex; /* 使用 Flexbox 排列菜单项 / Use Flexbox for menu item layout */
+  justify-content: space-around; /* 均匀分布菜单项 / Evenly distribute items */
+  align-items: center; /* 垂直居中菜单项 / Vertically center items */
+  list-style: none; /* 移除默认列表符号 / Remove list markers */
+  margin: 0; /* 清除外边距 / Remove margin */
+  padding: 0; /* 清除内边距 / Remove padding */
+} /* End list layout */
+#nav-mobile ul li, /* 移动端菜单项 / Mobile nav list items */
+#nav-desktop ul li { /* 桌面端菜单项 / Desktop nav list items */
+  flex: 1; /* 平分可用空间 / Share available space evenly */
+  text-align: center; /* 文本与图标居中 / Center text and icons */
+} /* End list items */
+
+/* Menu Link Styles (菜单链接样式) */
+#nav-mobile ul li a, /* 移动端链接 / Mobile nav links */
+#nav-desktop ul li a { /* 桌面端链接 / Desktop nav links */
+  display: block; /* 块级显示，增强可点击面积 / Block display for larger click area */
+  padding: 1rem 0; /* 上下内边距 1rem / 1rem vertical padding */
+  font-size: 1.25rem; /* 字号 1.25rem / 1.25rem font size */
+  text-decoration: none; /* 去除下划线 / Remove underline */
+  color: var(--text-color); /* 使用文本主题色 / Use theme text color */
+  position: relative; /* 相对定位，配合伪元素使用 / Relative positioning for pseudo-elements */
+  transition: background-color 0.2s, color 0.2s, font-weight 0.2s; /* 平滑过渡 / Smooth transitions */
+} /* End link styles */
+nav a { text-decoration: none; /* 取消所有导航链接下划线 / Remove underline on all nav links */ }
+
+/* Hover and Active States (悬停/激活 状态) */
+#nav-desktop ul li a:hover { /* 桌面端悬停样式 / Desktop hover state */
+  background-color: var(--accent-color-light); /* 背景色变浅 / Lighter background */
+  color: var(--accent-color-dark); /* 文本色变深 / Darker text */
+  font-weight: bold; /* 加粗字体 / Bold text */
+} /* End hover */
+#nav-desktop ul li a:active { /* 桌面端按下样式 / Desktop active state */
+  transform: scale(0.98); /* 轻微缩放反馈 / Slight scale for press feedback */
+} /* End active */
+#nav-desktop ul li a:hover::before, /* 悬停链接前添加 `[` / Add `[` before hovered link */
+#nav-desktop a[aria-current="page"]::before { /* 当前页面链接前添加 `[` / Add `[` before current page link */
+  content: "["; /* 插入 `[` 字符 / Insert `[` character */
+  margin-right: 0.25rem; /* 文本与符号间距 / Spacing between symbol and text */
+} /* End ::before */
+#nav-desktop ul li a:hover::after, /* 悬停链接后添加 `]` / Add `]` after hovered link */
+#nav-desktop a[aria-current="page"]::after { /* 当前页面链接后添加 `]` / Add `]` after current page link */
+  content: "]"; /* 插入 `]` 字符 / Insert `]` character */
+  margin-left: 0.25rem; /* 符号与文本间距 / Spacing between symbol and text */
+} /* End ::after */
+
+/* Section Offset for Navigation (内容区避让导航) */
+main, /* 主内容区域 / Main content area */
+.mt-nav { /* 具有导航间距类的元素 / Elements with nav-margin class */
+  margin-top: 3.5rem; /* 顶部外边距，与导航栏高度一致 / Top margin to offset nav bar height */
+} /* End offset */
+.intro-section { margin-top: 2rem; /* 首屏介绍区顶部间距 / Top margin for intro section */ }
+
+/* Responsive Images (响应式图片) */
+.responsive-img { /* 响应式图片类 / Responsive image class */
+  display: block; /* 块级显示，便于居中 / Block display for centering */
+  max-width: 100%; /* 宽度不超过容器 / Max width at 100% */
+  height: auto; /* 自动高度，保持纵横比 / Auto height to maintain aspect ratio */
+  margin: 1.5rem auto; /* 上下 1.5rem 外边距，水平居中 / 1.5rem vertical margin, centered horizontally */
+} /* End .responsive-img */
+
+/* Button Base and Variants (按钮样式与变体) */
+.btn { /* 通用按钮类 / Base button class */
+  font-size: 1rem; /* 字号 1rem / 1rem font size */
+  padding: 0.5em 1em; /* 内边距 0.5em 上下，1em 左右 / 0.5em vertical, 1em horizontal padding */
+  border-radius: 4px; /* 圆角边框 / Rounded corners */
+  transition: transform .1s, box-shadow .1s, background-color .2s; /* 动画过渡 / Transition effects */
+} /* End .btn */
+.btn-primary { /* 主按钮类 / Primary button variant */
+  background-color: var(--color-primary); /* 背景色主色 / Primary background color */
+  color: #fff; /* 文本白色 / White text */
+  border: none; /* 去除边框 / Remove border */
+} /* End .btn-primary */
+.btn-primary:hover { background-color: var(--color-primary-dark); /* 悬停更暗背景 / Darker background on hover */ } /* End hover */
+.btn-primary:active { transform: scale(0.98); box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); /* 按下缩放和内阴影 / Scale and inset shadow on active */ } /* End active */
+.btn-primary[disabled] { opacity: .5; cursor: not-allowed; /* 禁用状态，半透明与禁用指针 / Disabled state styling */ } /* End disabled */
+.btn-secondary { /* 次按钮类 / Secondary button variant */
+  background: transparent; /* 透明背景 / Transparent background */
+  color: var(--color-primary); /* 文本主色 / Primary color text */
+  border: 2px solid var(--color-primary); /* 主色边框 / Primary color border */
+} /* End .btn-secondary */
+.btn-secondary:hover { box-shadow: 0 0 0 2px var(--color-primary-light); /* 悬停边框阴影 / Hover border shadow */ } /* End hover */
+.btn-secondary:active { transform: translateY(1px); /* 按下下移反馈 / Press feedback movement */ } /* End active */
+.btn-secondary[disabled] { opacity: .4; border-color: #ccc; cursor: not-allowed; /* 禁用状态半透明与禁用指针 / Disabled state styling */ } /* End disabled */
+.btn-icon { /* 图标按钮类 / Icon button variant */
+  background: transparent; /* 透明背景 / Transparent background */
+  border: none; /* 去除边框 / Remove border */
+  font-size: 1.2em; /* 略大字体以突出图标 / Larger font size for icon prominence */
+} /* End .btn-icon */
+.btn-icon:hover { color: var(--color-primary-dark); /* 悬停变色 / Change color on hover */ } /* End hover */
+.btn-icon:active { transform: scale(0.9); /* 按下缩小反馈 / Scale down on active */ } /* End active */
+
+/* End of components.css */
