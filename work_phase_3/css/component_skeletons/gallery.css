@@ -1,0 +1,48 @@
+/*
+ * Gallery Component Styles (画廊组件样式注释版)
+ * 此文件为图片画廊布局提供样式，使用 CSS Grid 实现响应式布局。
+ */
+
+/*
+ * 1. Gallery container as CSS Grid
+ *    画廊容器设为 CSS Grid 布局
+ *    - display: grid;                                  Establish grid container (建立网格容器)
+ *    - grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ *      Create responsive columns that fit as many 200px-wide items as possible (在可用空间内自动适应，最小宽度200px，最大等分)
+ *    - place-items: center;                            Center items horizontally and vertically (水平垂直居中网格项)
+ *    - gap: 1rem;                                      Set uniform gap between items (网格项间距)
+ *    - margin-bottom: 2rem;                            Space below gallery container (容器底部外边距)
+ */
+ .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  place-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/*
+* 2. Gallery item styles
+*    画廊项样式
+*    - display: block;        Ensure each item behaves like a block-level element (块级元素展示)
+*    - width: 100%;           Full-width inside grid cell (填满网格单元宽度)
+*    - height: auto;          Maintain aspect ratio (保持纵横比)
+*    - transition: transform 0.3s ease; Smooth transform on hover (平滑的悬停缩放过渡)
+*    - cursor: pointer;       Pointer cursor to indicate clickability (鼠标指针提示可点击)
+*/
+.gallery .gallery-item {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/*
+* 3. Hover effect for gallery items
+*    画廊项悬停效果
+*    - transform: scale(1.05); Slightly enlarge item on hover (悬停时略微放大图片)
+*/
+.gallery .gallery-item:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,168 @@
+/*
+ * Community Form and Reflective Gallery Styles 注释版
+ * 此文件为社区表单和反思画廊组件提供样式，包含布局、交互和可访问性考量。
+ */
+
+/*
+ * 1. Center community section
+ *    限制社区板块最大宽度并居中显示
+ *    - max-width: 500px;            限制宽度为 500px
+ *    - margin: 2rem auto;           上下留白 2rem，水平居中
+ *    - padding: 1rem;               内部留白
+ */
+ #community-section {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/*
+ * 2. Form group spacing
+ *    .form-group 垂直分组，表单域间距
+ *    - margin-bottom: 1.5rem;       表单域底部间距
+ */
+#community-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+/*
+ * 3. Label styling
+ *    表单标签样式
+ *    - margin-bottom: .25rem;       标签与输入框间距
+ *    - font-weight: 600;            半粗字体以强化强调
+ *    - color: var(--text-color, #333); 使用主题文本色或回退色
+ */
+#community-form .form-group label {
+  margin-bottom: .25rem;
+  font-weight: 600;
+  color: var(--text-color, #333);
+}
+
+/*
+ * 4. Input, textarea, and file input styles
+ *    输入框、文本域、文件选择器通用样式
+ *    - width: 100%;                 宽度填满容器
+ *    - padding: .5rem;              内部留白
+ *    - border: 1px solid #ccc;      边框定义清晰边界
+ *    - border-radius: .25rem;       圆角边框
+ *    - background-color: #fafafa;   浅色背景提升对比度
+ */
+#community-form .form-group input[type="text"],
+#community-form .form-group input[type="email"],
+#community-form .form-group input[type="file"],
+#community-form .form-group textarea {
+  width: 100%;
+  padding: .5rem;
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+  background-color: #fafafa;
+}
+
+/*
+ * 5. Submit button base style
+ *    提交按钮主体样式
+ *    - background-color: var(--primary-color, #336699);
+ *      使用主题主色或回退色
+ *    - color: #fff;                 白色文字便于阅读
+ *    - border: none;                移除默认边框
+ *    - padding: .75rem 1.5rem;       按钮内边距
+ *    - border-radius: .25rem;       圆角边框
+ *    - font-weight: 700;            加粗文字
+ *    - transition:                  平滑过渡效果
+ *        background-color .2s ease,
+ *        transform .1s ease;
+ */
+#community-form button {
+  background-color: var(--primary-color, #336699);
+  color: #fff;
+  border: none;
+  padding: .75rem 1.5rem;
+  border-radius: .25rem;
+  font-weight: 700;
+  transition: background-color .2s ease, transform .1s ease;
+}
+
+/*
+ * 5.1 Button hover and active states
+ *     按钮悬停与按下反馈
+ *     - :hover: background-color 深色模式
+ *     - :active: translateY(1px) 下移 1px
+ */
+#community-form button:hover {
+  background-color: var(--primary-color-dark, #285080);
+}
+#community-form button:active {
+  transform: translateY(1px);
+}
+
+/*
+ * 6. Focus state for accessibility
+ *    焦点态高亮，便于键盘导航
+ *    - outline: 2px solid var(--primary-color-light, #88aacc);
+ *    - outline-offset: 2px;
+ */
+#community-form input:focus,
+#community-form textarea:focus,
+#community-form button:focus {
+  outline: 2px solid var(--primary-color-light, #88aacc);
+  outline-offset: 2px;
+}
+
+/*
+ * 7. Feedback message styling
+ *    反馈消息区样式和状态色
+ *    - margin-top: 1rem;            顶部间距
+ *    - font-weight: 600;            半粗字体
+ *    - .success: color: green;      成功文本颜色
+ *    - .error: color: red;          错误文本颜色
+ */
+#form-feedback {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+#form-feedback.success {
+  color: green;
+}
+#form-feedback.error {
+  color: red;
+}
+
+/*
+ * Reflective Gallery Styles
+ * 反思画廊样式
+ */
+
+/*
+ * 8. Reflective gallery container
+ *    横向排列并自动换行
+ *    - display: flex;               水平 flex 布局
+ *    - flex-wrap: wrap;             换行显示
+ *    - gap: 1rem;                   图片间距
+ *    - justify-content: flex-start; 左对齐
+ */
+.reflective-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+/*
+ * 9. Reflective gallery image
+ *    画廊图像样式
+ *    - max-width: 200px;            限制最大宽度
+ *    - width: 100%;                 响应式宽度
+ *    - height: auto;                保持纵横比
+ *    - object-fit: cover;           裁剪并填充
+ *    - border-radius: 4px;          圆角
+ *    - box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+ *      添加阴影
+ */
+.reflective-img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}

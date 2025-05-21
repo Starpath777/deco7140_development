@@ -1,0 +1,57 @@
+/* ========== Meyer Reset v2.0 | 20110126 | Public Domain ========== */
+/* http://meyerweb.com/eric/tools/css/reset/ | License: none (public domain) */
+
+/* ========== 基础元素重置 / Reset Basic Elements ========== */
+html, body, div, span, applet, object, iframe, /* 常用基本元素组 / Common foundational elements */
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,       /* 文本与块引用元素 / Text and block quote elements */
+a, abbr, acronym, address, big, cite, code,      /* 行内文本格式元素 / Inline text formatting */
+del, dfn, em, img, ins, kbd, q, s, samp,          /* 行内文字与媒体元素 / Inline text and media */
+small, strike, strong, sub, sup, tt, var,          /* 字体与变体元素 / Font style and variant elements */
+b, u, i, center,                                   /* 传统样式与对齐元素 / Traditional styling and alignment */
+dl, dt, dd, ol, ul, li,                           /* 列表相关元素 / List elements */
+fieldset, form, label, legend,                      /* 表单相关元素 / Form elements */
+table, caption, tbody, tfoot, thead, tr, th, td,   /* 表格相关元素 / Table elements */
+article, aside, canvas, details, embed,            /* HTML5 语义与嵌入元素 / HTML5 semantics and embed */
+figure, figcaption, footer, header, hgroup,         /* HTML5 语义分组元素 / HTML5 semantic grouping */
+menu, nav, output, ruby, section, summary,         /* HTML5 导航与输出元素 / HTML5 nav and output */
+time, mark, audio, video {                         /* HTML5 时间与媒体元素 / HTML5 time and media */
+    margin: 0;             /* Remove default margin / 移除默认外边距 */
+    padding: 0;            /* Remove default padding / 移除默认内边距 */
+    border: 0;             /* Remove default borders / 移除默认边框 */
+    font-size: 100%;       /* Set font-size relative to parent / 字体大小继承父元素 */
+    font: inherit;         /* Inherit font family and style / 继承字体系列与样式 */
+    vertical-align: baseline; /* Align inline elements to baseline / 内联元素基线对齐 */
+} /* End reset basic elements */
+
+/* ========== HTML5 区块元素重置 / HTML5 Display-Role Reset ========== */
+article, aside, details, figcaption, figure,      /* 新增 HTML5 区块元素 / New HTML5 sectioning */
+footer, header, hgroup, menu, nav, section {       /* 以下元素设置为块级 / Ensure block display */
+    display: block;       /* Block-level display / 块级显示 */
+} /* End HTML5 display-role reset */
+
+/* ========== Body 行高重置 / Body Line-Height ========== */
+body {
+    line-height: 1;        /* Set consistent line-height / 设置统一行高 */
+} /* End body */
+
+/* ========== 列表样式重置 / List Style Reset ========== */
+ol, ul {                   /* 有序与无序列表 / Ordered and unordered lists */
+    list-style: none;      /* Remove default list bullets / 移除默认列表符号 */
+} /* End lists */
+
+/* ========== 引用符号重置 / Blockquote & Q Quotes ========== */
+blockquote, q {            /* 块引用与行内引用元素 / Block and inline quotes */
+    quotes: none;          /* Disable default quotes / 取消默认引号 */
+} /* End quote elements */
+
+blockquote:before, blockquote:after, /* 伪元素重置内容 / Reset pseudo-content */
+q:before, q:after {
+    content: '';           /* Remove generated content / 移除自动生成内容 */
+    content: none;         /* Ensure no fallback content / 确保无回退内容 */
+} /* End pseudo-content reset */
+
+/* ========== 表格间距重置 / Table Spacing Reset ========== */
+table {                   /* 表格元素 / Table */
+    border-collapse: collapse; /* Merge adjacent cell borders / 合并相邻边框 */
+    border-spacing: 0;    /* Remove cell spacing / 移除单元格间距 */
+} /* End table reset */

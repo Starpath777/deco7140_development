@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 公共样式 -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <!-- 赛博朋克风格布局 -->
+  <link rel="stylesheet" href="css/cyberpunk_layout.css" />
+  <!-- 画廊和查看器骨架样式 -->
+  <link rel="stylesheet" href="css/component_skeletons/gallery.css" />
+  <link rel="stylesheet" href="css/component_skeletons/viewer.css" />
+  <!-- 页面专用样式 -->
+  <link rel="stylesheet" href="css/page_css/visceral_design.css" />
+
+  <title>Visceral Design</title>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <!-- 移动端导航 -->
+      <nav id="nav-mobile" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">WP3 Home</a></li>
+          <li><a href="site_map.html">Site Map</a></li>
+          <li><a href="style_guide.html" aria-current="page">Style Guide</a></li>
+          <li><a href="ethical_response.html">Ethics Response</a></li>
+          <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+        </ul>
+      </nav>
+
+      <!-- 桌面端导航 -->
+      <nav id="nav-desktop" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">WP3 Home</a></li>
+          <li><a href="site_map.html">Site Map</a></li>
+          <li><a href="style_guide.html" aria-current="page">Style Guide</a></li>
+          <li><a href="ethical_response.html">Ethics Response</a></li>
+          <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+        </ul>
+      </nav>
+
+      <!-- 面包屑 -->
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="style_guide.html">Style Guide</a></li>
+        <li>Visceral Design</li>
+      </ul>
+
+      <!-- 标题和介绍 -->
+      <h1 class="m-y-5">Visceral Design</h1>
+      <p class="hero-text">
+        The focus of this section of the Style Guide is ensuring the user has a good first impression of the site.<br>
+        本节风格指南聚焦于打造用户对网站的第一视觉良好体验。
+      </p>
+
+      <!-- 画廊 & 查看器 -->
+      <article>
+        <h2 class="m-t-3">Reference diagram</h2>
+        <section class="gallery m-t-3">
+          <img src="assets/cankaotu1.png" alt="cankaotu1" />
+          <img src="assets/cankaotu2.png" alt="cankaotu2" />
+          <img src="assets/cankaotu3.jpg" alt="cankaotu3" />
+          <img src="assets/cankaotu4.png" alt="cankaotu4" />
+        </section>
+      </article>
+
+      <!-- Style Guidelines / 风格指南文档示例 -->
+      <article class="m-y-5">
+        <h2>Style Guidelines / 风格指南</h2>
+
+        <!-- Typography -->
+        <section id="typography" class="m-t-4">
+          <h3>Typography / 排版规则</h3>
+          <ul>
+            <li>Font Family 字体家族: <code>'Exo', serif</code></li>
+            <li>Font Sizes 字号: <code>h1:3rem</code>, <code>h2:2rem</code>, <code>p:1rem</code></li>
+            <li>Font Weight 字重: <code>normal:400</code>, <code>bold:700</code></li>
+            <li>Line Height 行高: <code>1.6</code></li>
+            <li>Letter Spacing 字距: <code>0.5px</code></li>
+          </ul>
+          <div class="text-block m-t-2">
+            <h1>标题示例 H1</h1>
+            <p>这是一段文本示例，用于展示排版效果。This is a paragraph example to demonstrate typography.</p>
+          </div>
+          <pre
+            class="m-t-2"><code>h1 { font-family: 'Exo', serif; font-size: 3rem; font-weight:700; line-height:1.6; letter-spacing:0.5px; }</code></pre>
+        </section>
+
+        <!-- Color Scheme -->
+        <section id="colors" class="m-t-4">
+          <h3>Color Scheme / 配色方案</h3>
+          <ul>
+            <li>Primary 主色: <code>var(--color-primary)</code> (#0ff0fc)</li>
+            <li>Secondary 次色: <code>var(--secondary-color)</code> (#3498db)</li>
+            <li>Accent 强调色: <code>var(--color-accent)</code> (#ff007f)</li>
+          </ul>
+          <div class="swatches m-t-2" style="display:flex;gap:1rem;">
+            <div style="background:var(--color-primary);width:80px;height:40px;border:1px solid #fff;"></div>
+            <div style="background:var(--secondary-color);width:80px;height:40px;border:1px solid #fff;"></div>
+            <div style="background:var(--color-accent);width:80px;height:40px;border:1px solid #fff;"></div>
+          </div>
+          <p class="m-t-2">对比度 Contrast Ratios: Primary on background ≥ 4.5:1</p>
+        </section>
+
+        <!-- Layout -->
+        <section id="layout" class="m-t-4">
+          <h3>Layout / 布局规范</h3>
+          <ul>
+            <li>Container 容器宽度: <code>max-width:1200px; margin:0 auto;</code></li>
+            <li>Spacing 间距变量: <code>--space-1:0.5rem; --space-2:1rem; --space-3:2rem;</code></li>
+            <li>Breakpoints 响应式断点: <code>768px</code>, <code>1024px</code></li>
+          </ul>
+          <div class="demo-grid m-t-2"
+            style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;">
+            <div style="background:#222;color:#fff;padding:0.5rem;">Grid Item 1</div>
+            <div style="background:#333;color:#fff;padding:0.5rem;">Grid Item 2</div>
+            <div style="background:#444;color:#fff;padding:0.5rem;">Grid Item 3</div>
+          </div>
+        </section>
+
+        <!-- UI Components -->
+        <section id="ui-components" class="m-t-4">
+          <h3>UI Components / UI 组件</h3>
+          <div class="m-t-2">
+            <button class="m-r-2">按钮示例 Button</button>
+            <input type="text" placeholder="输入框示例" style="padding:0.5rem;" />
+          </div>
+          <p class="m-t-2"><a href="#">链接示例 Link</a></p>
+          <pre
+            class="m-t-2"><code>button { background:var(--color-primary); color:#111; padding:0.75rem 1.5rem; }</code></pre>
+        </section>
+
+        <!-- Image Guidelines -->
+        <section id="images" class="m-t-4">
+          <h3>Image Guidelines / 图像准则</h3>
+          <ul>
+            <li>Aspect Ratio 尺寸比例: <code>16:9</code></li>
+            <li>Alt Text 替代文本: 必填且描述清晰</li>
+            <li>Icons 图标风格: 使用高对比度 SVG 矢量</li>
+          </ul>
+          <img src="assets/sample.jpg" alt="示例图片" style="max-width:200px;margin-top:1rem;" />
+          <pre class="m-t-2"><code>&lt;img src="assets/sample.jpg" alt="示例图片" /&gt;</code></pre>
+        </section>
+      </article>
+
+      <!-- 只保留一个 Viewer 元素 -->
+      <aside class="viewer m-t-3" id="viewer" aria-hidden="true">
+        <button id="close-viewer" aria-label="Close image viewer">×</button>
+        <img id="viewer-img" src="" alt="" />
+        <p id="viewer-caption"></p>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- 引入模块化脚本 -->
+  <script type="module" src="js/visceral_design.js" defer></script>
+</body>
+
+</html>

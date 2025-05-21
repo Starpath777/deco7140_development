@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS Linking -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/page_css/site_map.css" />
+  <!-- 新增：赛博朋克风格布局 -->
+  <link rel="stylesheet" href="css/cyberpunk_layout.css">
+
+  <!-- 画廊 -->
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/viewer.css">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <!-- 面包屑 -->
+
+
+  <title>Site Map</title>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <!-- Mobile navigation -->
+      <nav id="nav-mobile" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">WP3 Home</a></li>
+          <li><a href="site_map.html" aria-current="page">Site Map</a></li>
+          <li><a href="style_guide.html">Style Guide</a></li>
+          <li><a href="ethical_response.html">Ethics Response</a></li>
+          <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop navigation -->
+      <nav id="nav-desktop" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">WP3 Home</a></li>
+          <li><a href="site_map.html" aria-current="page">Site Map</a></li>
+          <li><a href="style_guide.html">Style Guide</a></li>
+          <li><a href="ethical_response.html">Ethics Response</a></li>
+          <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+        </ul>
+      </nav>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="site_map.html" aria-current="page">Site Map</a></li>
+      </ul>
+
+      <!-- Page title -->
+      <h1>Site Map</h1>
+
+      <!-- Short description -->
+      <section class="intro-section">
+        <p>This page provides an overview of all the pages on our site, so you can quickly navigate to where you need to
+          go.</p>
+      </section>
+
+      <section class="site-map-screenshots">
+        <h2>Diagram of Post-it Notes And Sitemap<br />便利贴示意图以及站点图</h2>
+
+        <figure>
+          <img src="assets/bianlitiao1.png" alt="Post-it Notes" class="responsive-img" />
+          <figcaption>Post-it Notes</figcaption>
+
+          <img src="assets/site-map-desktop1.png" alt="site-map-desktop1" class="responsive-img" />
+          <figcaption>site-map-desktop1</figcaption>
+          <section class="annotation-section m-y-5">
+            <h2>首页（Home Page）</h2>
+            <h3>用途 （Purpose） </h3>
+            <ul>
+              <li>向新访客和注册用户展示网站的整体架构、最新公告和热门事件概览。</li>
+              <li> Provide new and returning users with an overview of the site structure, latest announcements, and
+                featured events.</li>
+              <li>向新访客和注册用户展示网站的整体架构、最新公告和热门事件概览。</li>
+              <li> Provide new and returning users with an overview of the site structure, latest announcements, and
+                featured events.</li>
+
+            </ul>
+
+            <h3>关键功能与交互 （Key Features & Interactions）</h3>
+            <ul>
+              <li>Logo 单击 → 返回首页</li>
+              <li>Logo click → Return to Home</li>
+              <li>导航菜单（Forum、Resources、Events、Guilds、Messages、User、Help、About）</li>
+              <li> Hover or tap to reveal sub-items.</li>
+              <li>搜索栏</li>
+              <li>输入关键词，实时过滤帖子或资源。Search bar</li>
+              <li>Type keywords to filter posts or resources in real time.</li>
+              <li> 热门事件大图</li>
+              <li> 静态展示当期最重要公告，点击查看详情。
+                Featured Event Banner</li>
+              <li> Static display of the most important announcement; click to view details.</li>
+              <li> 游戏分类缩略图</li>
+              <li> RPG/FPS/RTS 等类型代表作，点击进入对应版块。
+                Game Category Thumbnails</li>
+              <li> Represented by iconic games (e.g., CSGO for FPS, StarCraft for RTS); click to enter category.</li>
+              <li> 公告栏</li>
+              <li> 按时间倒序滚动显示最新网站新闻。
+                News Ticker</li>
+              <li> Scrolling list of site updates, sorted newest first.</li>
+              <li> Help & About 子菜单</li>
+              <li> 弹出意见反馈表单、功能指南、团队介绍。
+                Help & About submenu</li>
+              <li> Opens feedback form, usage guide, and team info.</li>
+
+              <h3>如何支持用户与客户需求 （User & Client Support）</h3>
+              <li> 用户：快速定位感兴趣内容，Logo 返回降低迷失感。</li>
+              <li> Users: Quickly find desired content; logo-to-home reduces disorientation.</li>
+              <li> 客户（站方）：精准发布公告与活动，收集用户反馈。</li>
+              <li> Clients (Site Admins): Precisely convey announcements and events; gather user feedback.</li>
+
+              <h3>无障碍考虑 （Accessibility Considerations）</h3>
+              <li> ARIA</li>
+              <li>
+                <nav aria-label="Main Navigation"> 明确导航区域。
+                  ARIA
+              </li>
+              <li>
+                <nav aria-label="Main Navigation"> clarifies navigation region.
+              </li>
+              <li> 搜索框 <input aria-label="Search posts or resources">。</li>
+              <li> 键盘导航</li>
+              <li> 所有链接、按钮可使用 Tab/Enter 操作。
+                Keyboard Support</li>
+              <li> All links and buttons operable via Tab/Enter.</li>
+              <li> 对比度</li>
+              <li> 文本与背景对比度 ≥ 4.5:1。
+                Contrast</li>
+              <li> Text-to-background ratio ≥ 4.5:1.</li>
+              <li> 图片替代文本</li>
+              <li> 缩略图 alt 标签描述清晰。
+                Alt Text</li>
+              <li> Clear alt attributes on all thumbnails.</li>
+
+              <img src="assets/site-map-desktop2.png" alt="site-map-desktop2" class="responsive-img" />
+              <figcaption>site-map-desktop2</figcaption>
+              <h2>分区页面（Category Page）</h2>
+              <h3>用途 （Purpose）</h3>
+              <li> 展示某一游戏类别下的帖和相关资源，帮助用户在细分社区中浏览与互动。</li>
+              <li> Display all posts and resources within a specific game category, enabling focused browsing and
+                participation.</li>
+
+              <h3>关键功能与交互 （Key Features & Interactions）</h3>
+              <li> 置顶规则条</li>
+              <li> 红底高亮社区规范（如“禁止游戏歧视”），始终可见。
+                Pinned Rules Bar</li>
+              <li> Red-highlighted community rules (e.g., “No game discrimination”), always visible.</li>
+              <li> Hot Keywords</li>
+              <li> 根据标签频次生成关键词云；点击即刻过滤列表。
+                Hot Keywords</li>
+              <li> Tag-frequency keyword cloud; click to filter list instantly.</li>
+              <li> 帖子列表</li>
+              <li> 倒序排序，悬停显示摘要预览、点赞/回复按钮。
+                Post List</li>
+              <li> Sorted newest first; hover to preview snippet and show like/reply buttons.</li>
+              <li> 资源板块</li>
+              <li> Creative Workshop、Mod 分享，经管理员审核后上线。
+                Resource Section</li>
+              <li> Creative Workshop, Mods sharing; admin-approved before going live.</li>
+
+
+
+              <h3>如何支持用户与客户需求 （User & Client Support）</h3>
+              <li> 用户：</li>
+              <li> “规则条”提醒社区规范；
+
+                “Hot Keywords”加速定位感兴趣话题；
+
+                摘要预览减少无效点击。</li>
+              <li> Users:</li>
+              <li> Rules bar reinforces norms;
+
+                Hot Keywords speed topic discovery;
+
+                Snippet preview reduces wasted clicks.</li>
+              <li> 客户：</li>
+              <li> 建立健康社区文化；
+
+                热点标签数据助运营决策；
+
+                管理员可监控并审核内容。</li>
+              <li> Clients:</li>
+              <li> Foster positive community culture;
+
+                Keyword analytics support operations;
+
+                Admin oversight of submitted content.</li>
+
+
+              <h3>无障碍考虑 （Accessibility Considerations）</h3>
+              <li> ARIA</li>
+              <li> 规则条 <aside aria-label="Community rules">；</li>
+              <li> 关键词用 <button aria-label="Filter by keyword X">。
+                  ARIA</li>
+              <li> Rules bar wrapped in <aside aria-label="Community rules">;</li>
+              <li> Keywords as <button aria-label="Filter by keyword X">.</li>
+              <li> 键盘/触屏</li>
+              <li> 列表项目可用箭头键导航，Enter 展开详情。
+                Keyboard/Touch</li>
+              <li> Arrow keys navigate items; Enter expands details.</li>
+              <li> 对比度</li>
+              <li> 置顶条红白对比 ≥ 3:1；关键词聚焦态加深阴影。
+                Contrast</li>
+              <li> Red/white ratio ≥ 3:1; focused keywords show stronger shadow.</li>
+              <li> 屏幕阅读器</li>
+              <li> 列表区域 role="feed"，新帖触发 aria-live="polite"。
+                Screen Reader</li>
+              <li> List has role="feed"; new posts announced via aria-live="polite".</li>
+
+
+              <img src="assets/site-map-desktop3.png" alt="site-map-desktop3" class="responsive-img" />
+              <figcaption>site-map-desktop3</figcaption>
+              <h2>帖子详情页（Post Detail Page）</h2>
+
+              <h3>用途 （Purpose） ）</h3>
+              <li> 展示单一帖子的完整内容与评论，支持用户深入讨论与私信。</li>
+              <li> Show the full content and comments of a single post, enabling in-depth discussion and private
+                messaging.</li>
+              <h3> 关键功能与交互 （Key Features & Interactions） </h3>
+              <li> 用户信息栏（左侧）</li>
+              <li> 显示发帖人/回帖人头像、ID、等级、发帖／点赞统计；点击跳转用户主页。
+                User Info Panel (Left)</li>
+              <li> Shows avatar, ID, level, post/like stats; click to visit profile.
+
+              </li>
+              <li> 内容区（右侧）</li>
+              <li> 支持富文本（图片、代码、链接），点赞、收藏、回复按钮；</li>
+              <li> 评论树状折叠，可展开／收起回复。
+                Content Area (Right)</li>
+              <li> Rich text support (images, code, links), like/bookmark/reply;
+
+              </li>
+              <li> Collapsible threaded comments.</li>
+              <li> 私信按钮</li>
+              <li> 在用户栏启动私聊对话框，可拖拽、键盘关闭(Esc)。
+                PM Button</li>
+              <li> Opens draggable private chat modal; closable via Esc.</li>
+              <li> 快速导航</li>
+              <li>Logo/面包屑/浏览器后退；Alt+← 快捷返回。
+                Quick Navigation </li>
+              <li> Logo/breadcrumbs/browser back; Alt+← keyboard shortcut.</li>
+
+              <h3> 如何支持用户与客户需求 （User & Client Support）</h3>
+              <li> 用户：</li>
+              <li> 直观了解作者和评论者背景；
+
+                富媒体增强表达；
+
+                私信功能提升社区粘性。</li>
+              <li> Users:</li>
+              <li> Quickly gauge poster/replier credibility;
+
+                Rich media enriches expression;
+
+                PM fosters community engagement.</li>
+              <li>客户： </li>
+              <li> 私信和互动数据用于活跃度分析；
+
+                评论结构帮助自动化审核。</li>
+              <li> Clients:</li>
+              <li>Messaging and interaction metrics drive engagement analytics;
+
+                Threaded comments aid moderation automation.</li>
+              <h3>无障碍考虑（Accessibility Considerations）</h3>
+              <ul>
+                <li><strong>ARIA</strong>
+                  <ul>
+                    <li>
+                      <code>&lt;article role="article" aria-labelledby="post-title"&gt;</code><br>
+                      包裹主帖内容。<br>
+                      <em>Main post wrapped in
+                        <code>&lt;article role="article" aria-labelledby="post-title"&gt;</code>.</em>
+                    </li>
+                    <li>
+                      <code>&lt;section role="region" aria-label="Comments"&gt;</code><br>
+                      包裹评论区。<br>
+                      <em>Comments section wrapped in
+                        <code>&lt;section role="region" aria-label="Comments"&gt;</code>.</em>
+                    </li>
+                    <li>
+                      回复按钮需带 <code>aria-expanded="false/true"</code> 属性，反映折叠或展开状态。<br>
+                      <em>Reply buttons use <code>aria-expanded="false/true"</code> to indicate collapsed/expanded
+                        state.</em>
+                    </li>
+                  </ul>
+                </li>
+                <li><strong>对比度 & 可视焦点（Contrast & Focus）</strong>
+                  <ul>
+                    <li>按钮和链接在聚焦时应有清晰的焦点轮廓。<br>
+                      <em>Buttons and links should display a clear focus outline when focused.</em>
+                    </li>
+                    <li>头像与正文文本的对比度应 ≥ 4.5:1。<br>
+                      <em>Avatar and text contrast ratio should be ≥ 4.5:1.</em>
+                    </li>
+                  </ul>
+                </li>
+                <li><strong>键盘操作（Keyboard Operability）</strong>
+                  <ul>
+                    <li>按 <code>Esc</code> 键可关闭私信对话框。<br>
+                      <em>Press <code>Esc</code> to close the private message modal.</em>
+                    </li>
+                    <li>按 <code>Space</code> 键可折叠/展开评论线程。<br>
+                      <em>Press <code>Space</code> to toggle comment threads.</em>
+                    </li>
+                  </ul>
+                </li>
+                <li><strong>动态通知（Live Updates）</strong>
+                  <ul>
+                    <li>新回复应使用 <code>aria-live="polite"</code> 通知屏幕阅读器。<br>
+                      <em>New replies should be announced to screen readers using <code>aria-live="polite"</code>.</em>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+
+
+
+
+              <img src="assets/site-map-mobile.png" alt="site-map-mobile" class="responsive-img" />
+              <figcaption>site-map-mobile</figcaption>
+        </figure>
+
+      </section>
+
+      <!-- 手风琴容器 -->
+      <section class="accordion m-y-5">
+
+        <!-- 论坛 Forum -->
+        <div class="accordion-item">
+          <button class="accordion-header">▶ 论坛 Forum</button>
+          <div class="accordion-content">
+            <div class="accordion nested">
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 版块列表 Section List</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="forum.html">forum.html</a></p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 主题列表 Topic List</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="topics.html">topics.html</a></p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 发帖/回帖 Create/View Post</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="post.html">post.html</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 资源 Resources -->
+        <div class="accordion-item">
+          <button class="accordion-header">▶ 资源 Resources</button>
+          <div class="accordion-content">
+            <div class="accordion nested">
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 资源列表 Resource List</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="resources.html">resources.html</a></p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 上传/下载 Upload/Download</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="upload.html">upload.html</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 活动 Events -->
+        <div class="accordion-item">
+          <button class="accordion-header">▶ 活动 Events</button>
+          <div class="accordion-content">
+            <div class="accordion nested">
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 活动日历 Calendar</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="events.html">events.html</a></p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 报名/详情 Registration/Details</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="event-detail.html">event-detail.html</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 公会 Guilds -->
+        <div class="accordion-item">
+          <button class="accordion-header">▶ 公会 Guilds</button>
+          <div class="accordion-content">
+            <div class="accordion nested">
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 公会列表 Guild List</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="guilds.html">guilds.html</a></p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 我的公会 My Guild</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="my-guild.html">my-guild.html</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 消息 Messages -->
+        <div class="accordion-item">
+          <button class="accordion-header">▶ 消息 Messages</button>
+          <div class="accordion-content">
+            <div class="accordion nested">
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 私信 Private Messages</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="messages.html">messages.html</a></p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 通知 Notifications</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="notifications.html">notifications.html</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 用户 User -->
+        <div class="accordion-item">
+          <button class="accordion-header">▶ 用户 User</button>
+          <div class="accordion-content">
+            <div class="accordion nested">
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 注册/登录 Register/Login</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="login.html">login.html</a></p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 个人资料 Profile</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="profile.html">profile.html</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 帮助 Help -->
+        <div class="accordion-item">
+          <button class="accordion-header">▶ 帮助 Help</button>
+          <div class="accordion-content">
+            <div class="accordion nested">
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 常见问题 FAQ</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="faq.html">faq.html</a></p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">▷ 论坛规则 Forum Rules</button>
+                <div class="accordion-content">
+                  <p class="m-y-3"><a href="forum-rules.html">forum-rules.html</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+
+  <!-- 以 ES Module 方式引入并执行 initAccordion -->
+  <script type="module" src="js/site_map.js"></script>
+
+</body>
+
+</html>
