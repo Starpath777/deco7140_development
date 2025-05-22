@@ -122,3 +122,12 @@ img, video, iframe { max-width: 100%; /* 最大宽度 / Max width */ height: aut
 
 /* ========== 代码自动换行 / Code Wrapping ========== */
 pre, code, .explanation, .annotation { overflow-wrap: break-word; /* 换行溢出单词 / Break long words */ word-break: break-word; /* 在任意点换行 / Break at arbitrary points */ }
+
+/* 只针对“col-8 → row → col-4”里包裹 img 的情况 */
+.col-8 .row .col-4 img {
+  display: block;       /* 去除底部空隙 */
+  width: 100%;          /* 拉满父级列宽 */
+  height: 250px;        /* 固定你想要的高度，按需调整 */
+  object-fit: cover;    /* 等比裁剪并填满容器 */
+}
+

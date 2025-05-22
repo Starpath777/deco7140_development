@@ -1,89 +1,78 @@
-/*
- * Base Styles (基础样式注释版)
- * 此文件定义全局CSS变量、通用字体和标题样式，确保跨视口一致性。
- */
-
-/*
- * 1. CSS 变量定义
- *    Root-level CSS custom properties (根级自定义属性)
- *    - --color-primary:       Primary accent color (主要强调色)
- *    - --color-accent:        Secondary accent color (次要强调色)
- *    - --secondary-color:     Additional theme color (附加主题色)
- *    - --color-bg:            Page background color (页面背景色)
- *    - --color-text:          Default text color (默认文本色)
+/*  
+ * Base Styles (基础样式)
+ * 定义全局 CSS 变量、页面背景及文本颜色，保证跨视口一致性  
+ * Define global CSS variables, background and text color for consistent look across viewports  
  */
 :root {
-  --color-primary: #0ff0fc;
-  --color-accent: #ff007f;
-  --secondary-color: #3498db;
-  --color-bg: #0a0a0a;
-  --color-text: #e0e0e0;
+  /* Primary accent color (主要强调色) */            --color-primary:    #0ff0fc;
+  /* Secondary accent color (次要强调色) */          --color-accent:     #ff007f;
+  /* Additional theme color (附加主题色) */         --secondary-color:  #3498db;
+  /* Page background color (页面背景色) */          --color-bg:         #0a0a0a;
+  /* Default text color (默认文本色) */             --color-text:       #e0e0e0;
 }
 
-/*
-* 2. 基础页面设置
-*    Base page styles (基础页面样式)
-*    - font-family:             Set default font stack (设置默认字体堆栈)
-*    - color:                   Use text color variable (应用文本颜色变量)
-*/
+/*  
+ * Base Page Settings (基础页面设置)  
+ * - font-family: 设置默认字体堆栈  
+ * - color: 应用文本颜色变量  
+ * - font-family: default font stack  
+ * - color: apply text color variable  
+ */
 body {
   font-family: 'Exo', Georgia, 'Times New Roman', serif;
   color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
-/*
-* 3. 通用标题样式
-*    Headings typography (标题排版)
-*    - h1:                     Largest heading (最大级别标题)
-*        font-size: 6rem;      Font size for hero sections (主视觉区标题大小)
-*        font-weight: 700;     Bold weight for emphasis (加粗以突出)
-*    - h2:                     Section heading (章节标题)
-*        font-size: 3rem;      Moderate size for subheadings (适中大小)
-*        font-weight: 600;     Semi-bold for hierarchy (半粗以区分层次)
-*    - h3:                     Sub-section heading (小节标题)
-*        font-size: 1.5rem;    Smaller size for tertiary headings (更小级别标题)
-*        font-weight: 500;     Medium weight (中等粗细)
-*/
+/*  
+ * Headings Typography (标题排版)  
+ * 统一设置 h1, h2, h3 的字号与粗细，形成层级区分  
+ * Set sizes and weights for h1, h2, h3 to create visual hierarchy  
+ */
 h1 {
+  /* Largest heading for hero/banner (主视觉区最大标题) */  
   font-size: 6rem;
   font-weight: 700;
 }
 
 h2 {
+  /* Section heading (章节标题) */  
   font-size: 3rem;
   font-weight: 600;
 }
 
 h3 {
+  /* Sub-section heading (小节标题) */  
   font-size: 1.5rem;
   font-weight: 500;
 }
 
-/*
-* 4. 响应式断点：移动端标题调整
-*    Responsive headings for mobile (移动端响应式标题)
-*    - @media (max-width: 768px): Apply on small screens (在小屏幕上应用)
-*        h1: font-size: 2rem;   Reduce size for readability (减小以便阅读)
-*        h2: font-size: 1.6rem; Same reason (同上)
-*        h3: font-size: 1.3rem; Ensure hierarchy is maintained (保持层级关系)
-*/
+/*  
+ * Responsive Breakpoints (响应式断点)  
+ * 在屏幕宽度 ≤ 768px 时，自动缩小标题以提升可读性  
+ * Reduce heading sizes on small screens (≤768px) for readability  
+ */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2rem;
+    font-size: 2rem;    /* Mobile h1 size (移动端 h1 大小) */
   }
-
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.6rem;  /* Mobile h2 size (移动端 h2 大小) */
   }
-
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.3rem;  /* Mobile h3 size (移动端 h3 大小) */
   }
 }
 
-/* 
 
-/* Search bar */
+/*  
+ * Search Bar Wrapper (搜索栏容器)  
+ * - display: inline-block 保持行内块级元素  
+ * - position: relative 用于绝对定位子元素  
+ * - margin 和 right 调整位置  
+ * - display: inline-block to keep inline-block  
+ * - position: relative for absolute child positioning  
+ */
 #search-wrapper {
   display: inline-block;
   position: relative;
@@ -91,90 +80,100 @@ h3 {
   margin-left: 50px;
 }
 
+/*  
+ * Search Expanded: Close Icon Animations (展开搜索时，关闭图标动画)  
+ * 使用 keyframes cross-1-in / cross-2-in，按顺序展开“X”形关闭按钮  
+ */
 #search-wrapper.search-expanded #close-icon:before {
-  -webkit-animation: cross-1-in 0.25s linear 0s forwards;
   animation: cross-1-in 0.25s linear 0s forwards;
 }
-
-
 #search-wrapper.search-expanded #close-icon:after {
-  -webkit-animation: cross-2-in 0.25s linear 0.2s forwards;
   animation: cross-2-in 0.25s linear 0.2s forwards;
 }
 
+/*  
+ * Search Lens Animation (搜索镜头图标动画)  
+ * 在展开时播放 lens-out；默认时播放 lens-in  
+ * Play lens-out when expanded; lens-in by default  
+ */
 #search-wrapper.search-expanded:after {
-  -webkit-animation: lens-out 0.5s linear 1 forwards;
   animation: lens-out 0.5s linear 1 forwards;
 }
-
 #search-wrapper:after {
   position: absolute;
   bottom: 3px;
   right: -9px;
-  display: block;
   content: "";
+  display: block;
   width: 14px;
   height: 2px;
-  background-color: #000000;
-  -webkit-transform: rotate(45deg) scaleX(0);
+  background-color: #000;
   transform: rotate(45deg) scaleX(0);
   transform-origin: 0 50%;
-  -webkit-animation: lens-in 0.6s linear 0.9s forwards;
   animation: lens-in 0.6s linear 0.9s forwards;
 }
 
+/*  
+ * Search Input Field (搜索输入框)  
+ * - background / border: 无背景 & 黑色边框  
+ * - padding: 内间距  
+ * - border-radius: 圆角  
+ * - width: 默认 0，focus 时展开  
+ * - transition: 平滑动画  
+ */
 #search-wrapper #search {
   background: none;
-  border: 2px solid;
-  border-color: #000000;
+  border: 2px solid #000;
   outline: none;
   padding: 0 9px;
   border-radius: 1000px;
   width: 0;
-  transition: all 0.3s 0.6s;
   font-size: 12px;
+  transition: all 0.3s 0.6s;
 }
-
 #search-wrapper #search::-webkit-input-placeholder {
+  /* Placeholder color (占位符颜色) */  
   color: rgba(0, 0, 0, 0.6);
 }
-
 #search-wrapper #search:focus {
-  width: 270px;
-  padding: 7px 15px;
+  width: 270px;      /* Focus 时宽度展开 (expand on focus) */
+  padding: 7px 15px; /* Focus 时内间距 (padding on focus) */
 }
 
-
+/*  
+ * Close Icon Base Style (关闭图标基础样式)  
+ * - cursor: pointer 鼠标手型  
+ * - position: absolute 绝对定位  
+ * - display: none 默认隐藏，展开时显示  
+ */
 #search-wrapper #close-icon {
   cursor: pointer;
   position: absolute;
-  right: 10px;
   top: 50%;
+  right: 10px;
   width: 20px;
   height: 20px;
-  -webkit-transform: translateY(-1px);
   transform: translateY(-1px);
   transition: 0.2s all;
   display: none;
 }
 
+/*  
+ * Show Close Icon (显示关闭图标)  
+ * 通过内联 style="display: block" 或者 JS 添加属性时触发  
+ * Triggered when JS sets style="display: block"  
+ */
 #search-wrapper #close-icon[style*="display: block"] {
-  color: red;
+  display: block;
 }
 
-#search-wrapper #close-icon[style*="display: block"]:before {
-  -webkit-transform: rotate(45deg) scaleX(1) translateY(10px);
-  transform: rotate(45deg) scaleX(1) translateY(10px);
-}
-
-#search-wrapper #close-icon[style*="display: block"]:after {
-  -webkit-transform: rotate(-45deg) scaleX(1) translateY(-10px);
-  transform: rotate(-45deg) scaleX(1) translateY(-10px);
-}
-
+/*  
+ * Close Icon Cross Lines (关闭图标交叉线)  
+ * 使用伪元素 :before / :after 绘制两条线，初始时 scaleX(0) 隐藏  
+ * Use pseudo-elements :before/:after to draw two lines, hidden by default  
+ */
 #search-wrapper #close-icon:before,
 #search-wrapper #close-icon:after {
-  display: block;
   content: "";
   position: absolute;
   width: 20px;
@@ -182,41 +181,44 @@ h3 {
   background-color: #878787;
   transform-origin: 100% 50%;
 }
-
 #search-wrapper #close-icon:before {
-  -webkit-transform: rotate(45deg) scaleX(0) translateY(10px);
   transform: rotate(45deg) scaleX(0) translateY(10px);
 }
-
 #search-wrapper #close-icon:after {
-  -webkit-transform: rotate(-45deg) scaleX(0) translateY(-10px);
   transform: rotate(-45deg) scaleX(0) translateY(-10px);
 }
 
+/*  
+ * Close Icon Closing Animation (关闭图标隐藏动画)  
+ * 使用 keyframes cross-1-out / cross-2-out，按顺序缩回“X”形  
+ */
 #search-wrapper #close-icon.closing:before {
-  -webkit-animation: cross-1-out 0.25s linear 0s forwards;
   animation: cross-1-out 0.25s linear 0s forwards;
 }
-
 #search-wrapper #close-icon.closing:after {
-  -webkit-animation: cross-2-out 0.25s linear 0.2s forwards;
   animation: cross-2-out 0.25s linear 0.2s forwards;
 }
 
-#search-wrapper:after {
-  position: absolute;
-  bottom: 3px;
-  right: -9px;
-  display: block;
-  content: "";
-  width: 14px;
-  height: 2px;
-  background-color: #000000;
-  -webkit-transform: rotate(45deg) scaleX(0);
-  transform: rotate(45deg) scaleX(0);
-  transform-origin: 0 50%;
-  -webkit-animation: lens-in 0.6s linear 0.9s forwards;
-  animation: lens-in 0.6s linear 0.9s forwards;
+/*  
+ * Keyframes (关键帧动画)  
+ * 定义 cross-1-in/cross-2-in/out 以及 lens-in/out 动画  
+ * Define keyframes for cross-1-in, cross-2-in, cross-1-out, cross-2-out, lens-in, lens-out  
+ */
+@keyframes cross-1-in {
+  to { transform: rotate(45deg) scaleX(1) translateY(10px); }
 }
-
-*/
+@keyframes cross-2-in {
+  to { transform: rotate(-45deg) scaleX(1) translateY(-10px); }
+}
+@keyframes cross-1-out {
+  to { transform: rotate(45deg) scaleX(0) translateY(10px); }
+}
+@keyframes cross-2-out {
+  to { transform: rotate(-45deg) scaleX(0) translateY(-10px); }
+}
+@keyframes lens-in {
+  to { transform: rotate(45deg) scaleX(1); }
+}
+@keyframes lens-out {
+  to { transform: rotate(45deg) scaleX(0); }
+}
