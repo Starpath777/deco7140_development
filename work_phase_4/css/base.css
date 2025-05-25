@@ -64,15 +64,8 @@ h3 {
   }
 }
 
-
-/*  
- * Search Bar Wrapper (搜索栏容器)  
- * - display: inline-block 保持行内块级元素  
- * - position: relative 用于绝对定位子元素  
- * - margin 和 right 调整位置  
- * - display: inline-block to keep inline-block  
- * - position: relative for absolute child positioning  
- */
+/* 搜索栏动效 */
+/* 1. 搜索容器：定位及初始状态 / Search container */
 #search-wrapper {
   display: inline-block;
   position: relative;
@@ -80,31 +73,13 @@ h3 {
   margin-left: 50px;
 }
 
-/*  
- * Search Expanded: Close Icon Animations (展开搜索时，关闭图标动画)  
- * 使用 keyframes cross-1-in / cross-2-in，按顺序展开“X”形关闭按钮  
- */
-#search-wrapper.search-expanded #close-icon:before {
-  animation: cross-1-in 0.25s linear 0s forwards;
-}
-#search-wrapper.search-expanded #close-icon:after {
-  animation: cross-2-in 0.25s linear 0.2s forwards;
-}
-
-/*  
- * Search Lens Animation (搜索镜头图标动画)  
- * 在展开时播放 lens-out；默认时播放 lens-in  
- * Play lens-out when expanded; lens-in by default  
- */
-#search-wrapper.search-expanded:after {
-  animation: lens-out 0.5s linear 1 forwards;
-}
+/* 2. 放大镜柄：使用 ::after 伪元素绘制，并通过关键帧实现“滑入/滑出”动画  
+   Magnifier handle: drawn with ::after pseudo-element, animated via keyframes */
 #search-wrapper:after {
+  content: "";
   position: absolute;
   bottom: 3px;
   right: -9px;
-  content: "";
-  display: block;
   width: 14px;
   height: 2px;
   background-color: #000;
@@ -112,15 +87,11 @@ h3 {
   transform-origin: 0 50%;
   animation: lens-in 0.6s linear 0.9s forwards;
 }
+#search-wrapper.search-expanded:after {
+  animation: lens-out 0.5s linear 1s forwards;
+}
 
-/*  
- * Search Input Field (搜索输入框)  
- * - background / border: 无背景 & 黑色边框  
- * - padding: 内间距  
- * - border-radius: 圆角  
- * - width: 默认 0，focus 时展开  
- * - transition: 平滑动画  
- */
+/* 3. 输入框：默认宽度为 0，通过 transition 延迟展开 / Input field: width=0 by default, expands via delayed transition */
 #search-wrapper #search {
   background: none;
   border: 2px solid #000;
@@ -129,96 +100,65 @@ h3 {
   border-radius: 1000px;
   width: 0;
   font-size: 12px;
-  transition: all 0.3s 0.6s;
-}
-#search-wrapper #search::-webkit-input-placeholder {
-  /* Placeholder color (占位符颜色) */  
-  color: rgba(0, 0, 0, 0.6);
+  transition: width 0.3s ease 0.6s, padding 0.3s ease 0.6s;
 }
 #search-wrapper #search:focus {
-  width: 270px;      /* Focus 时宽度展开 (expand on focus) */
-  padding: 7px 15px; /* Focus 时内间距 (padding on focus) */
+  width: 270px;
+  padding: 7px 15px;
 }
 
-/*  
- * Close Icon Base Style (关闭图标基础样式)  
- * - cursor: pointer 鼠标手型  
- * - position: absolute 绝对定位  
- * - display: none 默认隐藏，展开时显示  
- */
+/* 4. 关闭图标：用 ::before 和 ::after 画两条线，依次播放交叉动画  
+   Close icon: two lines via ::before/::after, animated in sequence */
 #search-wrapper #close-icon {
-  cursor: pointer;
+  display: none;
   position: absolute;
   top: 50%;
   right: 10px;
   width: 20px;
   height: 20px;
   transform: translateY(-1px);
-  transition: 0.2s all;
-  display: none;
+  cursor: pointer;
+  transition: all 0.2s;
 }
-
-/*  
- * Show Close Icon (显示关闭图标)  
- * 通过内联 style="display: block" 或者 JS 添加属性时触发  
- * Triggered when JS sets style="display: block"  
- */
-#search-wrapper #close-icon[style*="display: block"] {
+#search-wrapper.search-expanded #close-icon {
   display: block;
 }
-
-/*  
- * Close Icon Cross Lines (关闭图标交叉线)  
- * 使用伪元素 :before / :after 绘制两条线，初始时 scaleX(0) 隐藏  
- * Use pseudo-elements :before/:after to draw two lines, hidden by default  
- */
-#search-wrapper #close-icon:before,
-#search-wrapper #close-icon:after {
+#search-wrapper #close-icon::before,
+#search-wrapper #close-icon::after {
   content: "";
   position: absolute;
   width: 20px;
   height: 2px;
   background-color: #878787;
   transform-origin: 100% 50%;
+  transform: scaleX(0);
 }
-#search-wrapper #close-icon:before {
+#search-wrapper #close-icon::before {
   transform: rotate(45deg) scaleX(0) translateY(10px);
 }
-#search-wrapper #close-icon:after {
+#search-wrapper #close-icon::after {
   transform: rotate(-45deg) scaleX(0) translateY(-10px);
 }
-
-/*  
- * Close Icon Closing Animation (关闭图标隐藏动画)  
- * 使用 keyframes cross-1-out / cross-2-out，按顺序缩回“X”形  
- */
-#search-wrapper #close-icon.closing:before {
-  animation: cross-1-out 0.25s linear 0s forwards;
+#search-wrapper.search-expanded #close-icon::before {
+  animation: cross-1-in 0.25s linear 0s forwards;
 }
-#search-wrapper #close-icon.closing:after {
-  animation: cross-2-out 0.25s linear 0.2s forwards;
+#search-wrapper.search-expanded #close-icon::after {
+  animation: cross-2-in 0.25s linear 0.2s forwards;
 }
 
-/*  
- * Keyframes (关键帧动画)  
- * 定义 cross-1-in/cross-2-in/out 以及 lens-in/out 动画  
- * Define keyframes for cross-1-in, cross-2-in, cross-1-out, cross-2-out, lens-in, lens-out  
- */
-@keyframes cross-1-in {
-  to { transform: rotate(45deg) scaleX(1) translateY(10px); }
-}
-@keyframes cross-2-in {
-  to { transform: rotate(-45deg) scaleX(1) translateY(-10px); }
-}
-@keyframes cross-1-out {
-  to { transform: rotate(45deg) scaleX(0) translateY(10px); }
-}
-@keyframes cross-2-out {
-  to { transform: rotate(-45deg) scaleX(0) translateY(-10px); }
-}
-@keyframes lens-in {
-  to { transform: rotate(45deg) scaleX(1); }
-}
-@keyframes lens-out {
-  to { transform: rotate(45deg) scaleX(0); }
-}
+/* 5. 动画关键帧 / Keyframes */
+@keyframes lens-in  { to { transform: rotate(45deg) scaleX(1); } }
+@keyframes lens-out { to { transform: rotate(45deg) scaleX(0); } }
+@keyframes cross-1-in { to { transform: rotate(45deg) scaleX(1) translateY(10px); } }
+@keyframes cross-2-in { to { transform: rotate(-45deg) scaleX(1) translateY(-10px); } }
+
+/* 
+原理概述 / Summary of Mechanics:
+1. 放大镜柄（#search-wrapper::after）初始隐藏，加载后用 lens-in 动画滑入；聚焦时触发 lens-out 收回。  
+2. 输入框默认宽度为 0，通过 transition 延迟展开，focus 时平滑膨胀至 270px。  
+3. 关闭图标（#close-icon）的 ::before/::after 两条线，在匹配 .search-expanded 时依次用 cross-1-in 和 cross-2-in 动画从 scaleX(0) → scaleX(1)，形成“×”。  
+
+1. The magnifier handle (#search-wrapper::after) is hidden by default, slides in via lens-in on load, and retracts via lens-out on focus.  
+2. The input field starts at width:0, then expands to 270px with a delayed transition when focused.  
+3. The close icon’s pseudo-elements (::before/::after) animate from scaleX(0) to scaleX(1) in sequence under .search-expanded, forming the “×” shape.
+*/ 

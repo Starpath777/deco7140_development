@@ -1,0 +1,194 @@
+.form_item {
+    padding: 10px 0;
+    background-color: white;
+}
+
+.menu>div {
+    display: inline-block;
+    padding: 10px 10px;
+}
+
+.menu>div:hover {
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    /* background: white; */
+    position: absolute;
+    /* width: 72%; */
+    text-align: center
+}
+
+textarea {
+    border: solid 1px lightgray;
+    border-radius: 3px;
+}
+
+textarea {
+    padding: 10px;
+    height: 60px;
+}
+
+a {
+    color: dodgerblue;
+}
+
+.comment {
+    padding: 0 0 0 30px;
+    display: block;
+    margin-top: 8px
+}
+
+.role_info {
+    float: right;
+}
+
+.role_pic,
+.role_name {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.avatar {
+    border-radius: 100%;
+    vertical-align: top;
+}
+
+.role_input_box,
+.role_confirm_btn {
+    display: inline-block;
+}
+
+.role_confirm_btn {
+    height: inherit;
+    border: none;
+    width: 80px;
+    background: red;
+    color: white;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+#commentator {
+    border: none;
+    outline-style: none;
+    border-radius: 3px;
+    height: inherit;
+    /* width: 400px; */
+}
+
+.fake_input_box {
+    border-right-style: none;
+    width: 500px;
+    padding: 0 0 0 3px;
+    margin: 0;
+    /* height: 50px; */
+    position: relative;
+    border-radius: 3px;
+}
+
+.emoji_trigger_btn {
+    border: none;
+    background: none;
+    font-size: 20px;
+    vertical-align: bottom;
+}
+
+.emoji_board {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 105px;
+    font-size: 25px;
+    padding: 0 15px;
+    background: lightgrey;
+    border-radius: 3px;
+}
+
+.emoji_item {
+    cursor: pointer;
+}
+
+.emoji_board:after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 0;
+    height: 0;
+    top: 4px;
+    right: -20px;
+    border-top: 10px solid transparent;
+    border-left: 10px solid lightgrey;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+
+.post {
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.tags {
+    color: #f00;
+}
+
+.post-images {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.post-images img {
+    width: 150px;
+    height: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-tag {
+    background-color: #f90;
+    color: #fff;
+    padding: 3px 5px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.author {
+    font-size: 14px;
+    color: #666;
+}
+
+.post-stats {
+    display: flex;
+    align-items: center;
+}
+
+.views,
+.comments,
+.likes {
+    margin-left: 10px;
+    color: #666;
+}
