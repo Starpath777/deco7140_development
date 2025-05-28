@@ -19,7 +19,7 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <link rel="stylesheet" href="./css/login.css">
   <title>Style Guide</title>
-</head>
+</head> ·
 
 
 <body>
@@ -63,8 +63,8 @@
           </div>
         </div>
         <div class=" container-small col-md-6 container-login">
-          <h1 style="font-size: 60px;">login
-            <small>No account<a href="register.html">enroll</a></small>
+          <h1 style="font-size: 60px;">login<br>
+            <small>No account？<br><a href="register.html">enroll</a></small>
           </h1>
           <form method="post">
             <div class="form-group">
@@ -117,27 +117,32 @@
     <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 </body>
 <script>
-  // login
-  function Login() {
+ // 登录函数 / Login function
+function Login() {
 
-    // 判断密码是否为空
+    // 获取密码输入的值 / Get the value entered in the password field
     var password_value = $("#password").val();
-    console.log(password_value);
+    console.log(password_value); // 在控制台输出密码值 / Output password value to console
+
+    // 如果密码为空、null 或未定义，则添加红色边框 / If password is empty, null, or undefined, add red border
     if (password_value == "" || password_value == null || typeof name_value == "undefined") {
-      $("#password").css("border", "1px solid red");
+        $("#password").css("border", "1px solid red"); // 设置密码输入框边框为红色 / Set password input border to red
     } else {
-      $("#password").css("border", " ");
-    }
-    // 判断名字是否为空
-    var name_value = $("#name").val();
-    console.log(name_value);
-    if (name_value == "" || name_value == null || typeof name_value == "undefined") {
-      $("#name").css("border", "1px solid red");
-    } else {
-      $("#name").css("border", " ");
+        $("#password").css("border", ""); // 重置密码输入框边框样式 / Reset password input border style
     }
 
-  }
+    // 获取用户名输入的值 / Get the value entered in the name field
+    var name_value = $("#name").val();
+    console.log(name_value); // 在控制台输出用户名值 / Output name value to console
+
+    // 如果用户名为空、null 或未定义，则添加红色边框 / If name is empty, null, or undefined, add red border
+    if (name_value == "" || name_value == null || typeof name_value == "undefined") {
+        $("#name").css("border", "1px solid red"); // 设置用户名输入框边框为红色 / Set name input border to red
+    } else {
+        $("#name").css("border", ""); // 重置用户名输入框边框样式 / Reset name input border style
+    }
+}
+
 </script>
 <style>
   .container-login {

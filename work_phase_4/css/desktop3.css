@@ -1,137 +1,222 @@
+/*
+ * 头部区域容器
+ * Header section container
+ */
 .header {
-    /* background-color: #f4f4f4; */
+    /* 内边距：设置元素内容与边框之间的空白距离 / Padding: defines space between content and border */
     padding: 10px;
+    /* 排版模式：flex布局，启用弹性盒模型 / Display mode: flex container, enables flexbox layout */
     display: flex;
+    /* 主轴对齐：将子元素在主轴（水平）方向两端对齐 / Justify content: aligns child items at ends along main axis (horizontal) */
     justify-content: space-between;
+    /* 交叉轴对齐：将子元素在交叉轴（垂直）方向居中对齐 / Align items: centers child items along cross axis (vertical) */
     align-items: center;
 }
 
+/* 帖子标题区域，图标与标题水平排列并垂直居中
+   Post title section: icons and title aligned horizontally and centered vertically */
 .post-title {
+    /* flex布局 / Flex container */
     display: flex;
+    /* 垂直居中子元素 / Center child items vertically */
     align-items: center;
 }
 
+/* 帖子帮助按钮样式
+   Post help button style */
 .post-help {
+    /* 背景色：设置按钮背景颜色 / Background color: sets element background */
     background-color: #007bff;
+    /* 文本颜色 / Text color */
     color: white;
+    /* 内边距，上下5px，左右10px / Padding: 5px top & bottom, 10px left & right */
     padding: 5px 10px;
+    /* 圆角半径 / Border radius: rounds the element corners */
     border-radius: 3px;
+    /* 外右边距 / Margin-right: space to the right of element */
     margin-right: 5px;
 }
 
+/* 帖子操作按钮样式
+   Post operations button style */
 .post-operations button {
+    /* 背景色 / Background color */
     background-color: #f4f4f4;
+    /* 边框：1px实线，颜色#ccc / Border: 1px solid with light gray color */
     border: 1px solid #ccc;
+    /* 内边距 / Padding */
     padding: 5px 10px;
+    /* 圆角 / Border radius */
     border-radius: 3px;
+    /* 鼠标样式：指针 / Cursor: pointer on hover */
     cursor: pointer;
+    /* 外左边距 / Margin-left: space to the left */
     margin-left: 5px;
 }
 
+/* 帖子容器，环绕所有帖子内容
+   Container wrapping all posts */
 .post-container {
+    /* 内边距 / Padding */
     padding: 10px;
 }
 
+/* 单条帖子样式
+   Individual post item */
 .post-item {
+    /* 边框：1px实线 / Border: 1px solid */
     border: 1px solid #ccc;
+    /* 下外边距 / Margin-bottom: space below element */
     margin-bottom: 10px;
+    /* 内边距 / Padding */
     padding: 10px;
 }
 
+/* 用户信息区域
+   User info section */
 .post-user-info {
+    /* flex布局 / Flex container */
     display: flex;
+    /* 换行：允许子元素换行 / Flex wrap: allow wrapping of child items */
     flex-wrap: wrap;
+    /* 垂直起点对齐 / Align items: align to start vertically */
     align-items: flex-start;
 }
 
+/* 用户头像样式
+   User avatar style */
 .user-avatar {
+    /* 宽度 / Width */
     width: 50px;
+    /* 高度 / Height */
     height: 50px;
+    /* 圆形头像：50%半径 / Border radius: 50% makes element circular */
     border-radius: 50%;
+    /* 右外边距 / Margin-right: space to the right */
     margin-right: 10px;
 }
 
+/* 用户标签样式
+   User tag style */
 .user-tag {
+    /* 背景色 / Background color */
     background-color: #007bff;
+    /* 文本颜色 / Text color */
     color: white;
+    /* 内边距 / Padding */
     padding: 3px 5px;
+    /* 圆角 / Border radius */
     border-radius: 2px;
+    /* 字体大小 / Font size */
     font-size: 12px;
+    /* 上外边距 / Margin-top: space above element */
     margin-top: 5px;
 }
 
+/* 新标签背景色，用于突出显示“新”状态
+   New tag background for highlight */
 .new {
     background-color: #00c853;
 }
 
+/* 用户名称与等级容器
+   Container for username and level */
 .user-name-level {
+    /* 弹性项：占据剩余空间 / Flex: takes up remaining space */
     flex: 1;
 }
 
+/* 用户等级区域
+   User level section */
 .user-level {
+    /* flex布局 / Flex container */
     display: flex;
+    /* 垂直居中 / Center child items vertically */
     align-items: center;
+    /* 上外边距 / Margin-top */
     margin-top: 5px;
 }
 
+/* 等级图标尺寸
+   Level icon dimensions */
 .level-icon {
     width: 20px;
     height: 20px;
-    margin-right: 5px;
+    margin-right: 5px; /* 图标与文字之间的间距 / Space between icon and text */
 }
 
+/* 等级文字大小
+   Level text size */
 .level-text {
     font-size: 12px;
 }
 
+/* 初级粉丝颜色，用于标记等级
+   Junior fan color for level indication */
 .junior {
     color: #f9a825;
 }
 
+/* 星星图标尺寸
+   Star icon size */
 .star-icon {
     width: 16px;
     height: 16px;
-    margin-left: 5px;
+    margin-left: 5px; /* 图标与其他元素间距 / Space between icon and other items */
 }
 
+/* 用户额外操作按钮容器
+   Container for extra user options */
 .user-extra-ops {
-    margin-top: 5px;
+    margin-top: 5px; /* 上外边距 */
 }
 
+/* 通用按钮样式
+   Common button style */
 .btn {
     background-color: #f4f4f4;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-right: 5px;
+    border: 1px solid #ccc;         /* 边框 */
+    padding: 5px 10px;             /* 内边距 */
+    border-radius: 3px;            /* 圆角 */
+    cursor: pointer;               /* 鼠标指针 */
+    margin-right: 5px;             /* 右外边距 */
 }
 
+/* 礼物按钮背景色
+   Gift button background */
 .gift {
     background-color: #ff9800;
-    color: white;
+    color: white; /* 文本颜色 */
 }
 
+/* 分享按钮背景色
+   Share button background */
 .share {
     background-color: #4caf50;
-    color: white;
+    color: white; /* 文本颜色 */
 }
 
+/* 用户位置和时间信息样式
+   User location and time info style */
 .user-location-time {
-    font-size: 12px;
-    color: #777;
-    margin-top: 5px;
+    font-size: 12px;       /* 字体大小 */
+    color: #777;           /* 文本颜色 */
+    margin-top: 5px;       /* 上外边距 */
 }
 
+/* 举报图标样式
+   Report icon style */
 .report-icon {
     width: 16px;
     height: 16px;
-    display: inline-block;
-    background-color: #f44336;
-    border-radius: 50%;
-    margin-right: 5px;
+    display: inline-block; /* 行内块级元素 */
+    background-color: #f44336; /* 背景色 */
+    border-radius: 50%;       /* 圆形 */
+    margin-right: 5px;        /* 右外边距 */
 }
 
+/* 帖子内容区域
+   Post content area */
 .post-content {
-    margin-top: 10px;
+    margin-top: 10px; /* 上外边距 */
 }
