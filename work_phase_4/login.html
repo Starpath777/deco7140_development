@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 公共样式 -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <!-- 新增：赛博朋克风格布局 -->
+  <link rel="stylesheet" href="css/cyberpunk_layout.css">
+  <!-- 页面专用样式 -->
+  <link rel="stylesheet" href="css/page_css/style_guide.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="./css/login.css">
+  <title>Style Guide</title>
+</head>
+
+
+<body>
+  <main>
+    <div class="container">
+      <nav id="nav-mobile" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Forum</a></li>
+          <li><a href="resourse.html">Resourse</a></li>
+          <li><a href="style_guide.html" aria-current="page">Events</a></li>
+          <li><a href="ethical_response.html">Guilds</a></li>
+          <li><a href="genai_mt_acknowledgement.html">Message</a></li>
+          <li><a href="login.html">User</a></li>
+        </ul>
+      </nav>
+
+      <!-- 桌面端导航 -->
+      <nav id="nav-desktop" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Forum</a></li>
+          <li><a href="resourse.html">Resourse</a></li>
+          <li><a href="style_guide.html" aria-current="page">Events</a></li>
+          <li><a href="ethical_response.html">Guilds</a></li>
+          <li><a href="genai_mt_acknowledgement.html">Message</a></li>
+          <li><a href="login.html">User</a></li>
+          <li>
+            <div id="search-wrapper">
+              <form action="#">
+                <input type="text" id="search" placeholder="Search something...">
+                <div id="close-icon"></div>
+                <input class="d-none" type="submit" value="">
+              </form>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="group">
+            <img src="assets/visceral.jpg" alt="">
+          </div>
+        </div>
+        <div class=" container-small col-md-6 container-login">
+          <h1 style="font-size: 60px;">login
+            <small>No account<a href="register.html">enroll</a></small>
+          </h1>
+          <form method="post">
+            <div class="form-group">
+              <label>email</label>
+              <input type="email" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+              <label>password</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <div class="form-group" style="margin-top: 20px;">
+              <a href="../index.html"><button class=" btn btn-primary btn-block" type="submit"
+                  onclick="Login();">login</button></a>
+            </div>
+            <div class="form-group">
+              <a href="#">Forgot your password?</a>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- 页面专用脚本 -->
+    <script type="module" src="js/style_guide.js"></script>
+
+
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <!-- 新增：赛博朋克风格布局 -->
+    <link rel="stylesheet" href="css/cyberpunk_layout.css">
+    <!-- 页面专用样式 -->
+    <link rel="stylesheet" href="css/page_css/style_guide.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+
+
+    <!-- 页面专用脚本 -->
+    <script type="module" src="js/style_guide.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+</body>
+<script>
+  // login
+  function Login() {
+
+    // 判断密码是否为空
+    var password_value = $("#password").val();
+    console.log(password_value);
+    if (password_value == "" || password_value == null || typeof name_value == "undefined") {
+      $("#password").css("border", "1px solid red");
+    } else {
+      $("#password").css("border", " ");
+    }
+    // 判断名字是否为空
+    var name_value = $("#name").val();
+    console.log(name_value);
+    if (name_value == "" || name_value == null || typeof name_value == "undefined") {
+      $("#name").css("border", "1px solid red");
+    } else {
+      $("#name").css("border", " ");
+    }
+
+  }
+</script>
+<style>
+  .container-login {
+    padding: 40px;
+    border-radius: 20px;
+    /* background-color: #f0eeee; */
+  }
+</style>
+
+</html>
