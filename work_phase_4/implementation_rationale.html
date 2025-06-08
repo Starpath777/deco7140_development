@@ -87,45 +87,44 @@
       </div>
       <div class="col-8">
         <div class="container mb-4">
-          <h2>专家资源</h2>
-          <p>COMPREHENSIVE SOLUTIONS</p>
+          <h2>IBM </h2>
+          <p>Equal Access Accessibility Checker</p>
 
           <div class="row" style="text-align: center;">
             <div class="col-3">
               <a href="RPG.html" target="_blank" rel="noopener">
-                <img src="assets/reflective-1.png" alt="">
+                <img src="assets/error1.png" alt="">
               </a>
-              <h2 style="font-size: 15px;">《天涯明月刀》</h2>
-              <h2 style="font-size: 10px;">制作人</h2>
+              <h2 style="font-size: 15px;">SVG Has No Accessible Name</h2>
             </div>
             <div class="col-3">
               <a href="ARPG.html" target="_blank" rel="noopener">
-                <img src="assets/reflective-2.png" alt="">
+                <img src="assets/error2.png" alt="">
               </a>
-              <h2 style="font-size: 15px;">《王者荣耀》</h2>
-              <h2 style="font-size: 10px;">美术总监</h2>
+              <h2 style="font-size: 15px;">Button Control Has No Associated Label</h2>
 
             </div>
             <div class="col-3">
               <a href="TCG.html" target="_blank" rel="noopener">
-                <img src="assets/reflective-3.png" alt="">
+                <img src="assets/error3.png" alt="">
               </a>
-              <h2 style="font-size: 15px;">《使命召唤手游》</h2>
-              <h2 style="font-size: 10px;">服务器主程</h2>
+              <h2 style="font-size: 15px;">Hyperlink Has No Link Text or Accessible Name</h2>
 
             </div>
             <div class="col-3">
               <a href="TCG.html" target="_blank" rel="noopener">
-                <img src="assets/reflective-4.png" alt="">
+                <img src="assets/error4.png" alt="">
               </a>
-              <h2 style="font-size: 15px;">《和平精英》</h2>
-              <h2 style="font-size: 10px;">策划总监</h2>
+              <h2 style="font-size: 15px;">Insufficient Contrast Ratio (3.45:1)</h2>
 
             </div>
           </div>
           <div class="el-row">
-            <p>腾讯专家团是腾讯游戏学堂基于挖掘全球创意游戏，帮助更多创意游戏提升产品品质而建立的官方组织。通过聚合优质专家资源，并根据导师的专业能力提供风险评估、专业指导、前沿探索、行业交流的服务。
-              针对策划、程序、美术多个维度提供具体问题解决方案，全程跟进项目迭代效果。</p>
+            <p>To address these issues, provide every non-decorative SVG with a clear text alternative (using title or aria-label>), 
+              ensure all interactive controls like carousel buttons have descriptive labels for assistive technologies, 
+              include meaningful link text or accessible names on all hyperlinks, 
+              and adjust text and background colors to achieve at least a 4.5:1 contrast ratio for standard text. 
+              These changes will make the site fully navigable and readable for users relying on screen readers and those with low vision.</p>
           </div>
         </div>
         <div class="container">
@@ -163,21 +162,57 @@
     <div class="row" style="margin-top: 20px;">
       <div class="col-8">
         <div class="container">
-          <h2>GWB腾讯游戏创意大赛</h2>
-          <p>GWB GAME AWARDS</p>
-          <img src="assets/figure-1.40f54258.png" alt="">
-          <p>腾讯专家团是腾讯游戏学堂基于挖掘全球创意游戏，帮助更多创意游戏提升产品品质而建立的官方组织。通过聚合优质专家资源，并根据导师的专业能力提供风险评估、专业指导、前沿探索、行业交流的服务。
-            针对策划、程序、美术多个维度提供具体问题解决方案，全程跟进项目迭代效果</p>
+          <h2>Responsive Design And Dynamic Functionality</h2>
+          <p><section id="responsive-dynamics">
+  <ul>
+    <li>
+      <strong>Mobile-First & Breakpoints</strong><br>
+      Base styles in <code>base.css</code> target 320 px screens for default fonts and spacing. Media queries in <code>layout.css</code> and <code>desktop3.css</code> at 768 px and 1024 px adjust container width (90 vw → 70 vw), grid columns, and root variables.
+    </li>
+    <li>
+      <strong>Fluid Gallery & Post Grids</strong><br>
+      The gallery (<code>gallery.css</code>) uses CSS Grid <code>auto-fit minmax(200px, 1fr)</code>; resource cards (<code>components.css</code>) use Flexbox <code>flex-wrap: wrap</code>, ensuring items wrap and resize smoothly.
+    </li>
+    <li>
+      <strong>Accordion Animations</strong><br>
+      In <code>accordion.css</code>, toggling <code>.is-open</code> animates <code>max-height</code> and padding over 0.3–0.4 s. <code>accordion.js</code> handles click events to add/remove this class without manual height calculations.
+    </li>
+    <li>
+      <strong>Slide-In Image Viewer</strong><br>
+      Viewer styles (<code>viewer.css</code>) position the panel off-screen via <code>transform: translateX(100%)</code>. <code>viewer.js</code> adds an <code>.open</code> class to slide it into view over 0.3 s and trap background scroll.
+    </li>
+    <li>
+      <strong>AJAX Data Loading & Form Submission</strong><br>
+      <code>getData.js</code> fetches posts (GET) and renders cards; <code>postFormData.js</code> submits forms (POST); <code>message.js</code> shows success/error toasts, all without page reload.
+    </li>
+    <li>
+      <strong>Interactive Search Bar</strong><br>
+      Search styles in <code>site_map.css</code> animate the input with keyframes. <code>site_map.js</code> listens for input events and filters rendered post cards in real time by matching titles/body text.
+    </li>
+    <li>
+      <strong>Custom Carousel Slider</strong><br>
+      The carousel (<code>style_guide.js</code>) rotates slides every 5 s with opacity transitions from <code>cyberpunk_layout.css</code>. Prev/next controls and dot indicators toggle <code>.active</code> classes on hover and slide change.
+    </li>
+  </ul>
+</section>
+</p>
         </div>
 
       </div>
       <div class="col-4">
-        <div class="container" style="color: black;background-color: #00ffa3;">
-          <h2 style="color: black;">品牌活动</h2>
-          <p>BRAND ACTIVITIES</p>
-          <p>GWB将每年都将通过创意大赛等各类赛事活动为更多开发者提供施展自己创意和想法的机会。同时通过在各地区举办线下活动，针对研发团队的共性问题邀请专家进行分享，并为团队提供一对一项目交流的机会。</p>
+        <div class="container" style="color: rgb(255, 255, 255);">
+          <h2 style="color: rgb(255, 255, 255);"><a href="genai_mt_acknowledgement.html">Genai Mt Acknowledgement</a></h2>
+          <p>I used OpenAI’s ChatGPT for generating technical descriptions and code examples, 
+            DeepL Translator (with Google Translate as a backup) for precise Chinese↔English translations, 
+            and carefully crafted prompts to guide each task. When ChatGPT’s outputs were too generic or 
+            omitted project-specific files, I refined prompts with explicit filenames and CSS variables and manually 
+            enriched the results; when DeepL mistranslated CSS terms like “auto-fit minmax,” I cross-checked with Google
+             Translate, retained original terminology, and annotated key terms. To avoid overly long sections, 
+             I broke large tasks into smaller sub-sections and consolidated duplicate points. All AI-assisted text was 
+             thoroughly reviewed and rewritten to reflect my own analysis and ensure the document’s accuracy and originality. 
+             This process complied fully with the course’s GenAI & MT Usage Framework and upheld strict academic integrity.
+</p>
 
-          <img src="assets/figure-3.3be8ef9f.jpg" alt="">
         </div>
 
       </div>

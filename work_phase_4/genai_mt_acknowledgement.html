@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <!-- 新增：赛博朋克风格布局 -->
+    <link rel="stylesheet" href="css/cyberpunk_layout.css">
+    <!-- 页面专用样式 -->
+    <link rel="stylesheet" href="css/page_css/style_guide.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="./css/index2.css">
+    <title>Style Guide</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+    <main>
+        <div class="container">
+            <!-- 移动端导航 -->
+            <nav id="nav-mobile" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Forum</a></li>
+                    <li><a href="resourse.html">Resourse</a></li>
+                    <li><a href="implementation_rationale.html">Guilds</a></li>
+                    <li><a href="login.html">User</a></li>
+                </ul>
+            </nav>
+
+            <!-- 桌面端导航 -->
+            <nav id="nav-desktop" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Forum</a></li>
+                    <li><a href="resourse.html">Resourse</a></li>
+                    <li><a href="implementation_rationale.html">Guilds</a></li>
+                    <li><a href="login.html">User</a></li>
+                    <li>
+                        <div id="search-wrapper">
+                            <form action="#">
+                                <input type="text" id="search" placeholder="Search something...">
+                                <div id="close-icon"></div>
+                                <input class="d-none" type="submit" value="">
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- 主页内容 -->
+            <div class="row">
+                <div class="col-12">
+                    <p><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GenAI & Machine Translation Acknowledgement</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background: #111; color: #eee; }
+    h1, h2 { color: #0ff; }
+    section { margin-bottom: 2em; }
+    .challenge { background: #222; padding: 1em; border-radius: 4px; }
+    .challenge h3 { color: #f90; margin-bottom: 0.5em; }
+    .seal { margin-bottom: 1.5em; }
+    .seal h4 { margin: 0.5em 0; color: #0f0; }
+    .seal p, .seal ul { margin-left: 1em; }
+  </style>
+</head>
+<body>
+  <h1>GenAI & Machine Translation Acknowledgement</h1>
+
+  <section>
+    <h2>Tools Used</h2>
+    <ul>
+      <li><strong>OpenAI ChatGPT</strong> (text generation, code examples)</li>
+      <li><strong>DeepL Translator</strong> (Chinese↔English translation, terminology checking)</li>
+      <li><strong>Google Translate</strong> (secondary translation verification)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Usage Scenarios & Prompts</h2>
+    <ul>
+      <li><strong>OpenAI ChatGPT</strong>
+        <ul>
+          <li>“Please describe the responsive design and dynamic functionality details based on the provided CSS/JS code.”</li>
+          <li>“Expand the ‘Variations from A3 Design Proposal’ section, explaining technical limitations and feasibility issues.”</li>
+        </ul>
+      </li>
+      <li><strong>DeepL Translator</strong>
+        <ul>
+          <li>“Translate the following Chinese technical text into clear English: …”</li>
+          <li>“Please proofread and polish this English segment into fluent Chinese technical documentation.”</li>
+        </ul>
+      </li>
+      <li><strong>Google Translate</strong> (used to cross-check DeepL results)</li>
+    </ul>
+  </section>
+
+  <section class="challenge">
+    <h2>Challenges & Solutions (SEAL Format)</h2>
+
+    <div class="seal">
+      <h3>Challenge 1: Generic Outputs Not Matching Project Context</h3>
+      <h4>Situation</h4>
+      <p>When using ChatGPT to generate implementation details, the model produced generic descriptions without cyberpunk flair or specific file references.</p>
+      <h4>Evidence</h4>
+      <p>AI outputs did not reference key files like <code>visceral_design.css</code> or <code>cyberpunk_layout.css</code>.</p>
+      <h4>Action</h4>
+      <ul>
+        <li>Provided precise context in prompts, listing filenames and CSS variables.</li>
+        <li>Manually filtered and enriched AI results with relevant module details.</li>
+      </ul>
+      <h4>Learning</h4>
+      <p>Accurate context and examples in prompts greatly improve AI output relevance and specificity.</p>
+    </div>
+
+    <div class="seal">
+      <h3>Challenge 2: Inconsistent Translation of Technical Terms</h3>
+      <h4>Situation</h4>
+      <p>DeepL sometimes mistranslated CSS terms like “auto-fit minmax,” causing technical inaccuracies.</p>
+      <h4>Evidence</h4>
+      <p>Translated text included unnatural phrases like “automatic fit minimum maximum range.”</p>
+      <h4>Action</h4>
+      <ul>
+        <li>Compared results from DeepL and Google Translate, retaining original terminology with Chinese annotations.</li>
+        <li>Added a glossary of terms at the end of the document for clarity.</li>
+      </ul>
+      <h4>Learning</h4>
+      <p>Cross-tool verification and manual proofreading ensure term consistency and accuracy.</p>
+    </div>
+
+    <div class="seal">
+      <h3>Challenge 3: Overlong Sections from Bulk Expansion</h3>
+      <h4>Situation</h4>
+      <p>Asking AI to expand the entire “Variations” section at once resulted in lengthy, unfocused text.</p>
+      <h4>Evidence</h4>
+      <p>Expanded content exceeded 500 words, making it hard to identify key points quickly.</p>
+      <h4>Action</h4>
+      <ul>
+        <li>Broke the task into sub-tasks (e.g., “technical limitations,” “feasibility issues”).</li>
+        <li>Reviewed and consolidated similar points to tighten the structure.</li>
+      </ul>
+      <h4>Learning</h4>
+      <p>Segmenting large tasks and iterative review improves clarity and readability.</p>
+    </div>
+
+    <div class="seal">
+      <h3>Challenge 4: Maintaining Academic Integrity & Originality</h3>
+      <h4>Situation</h4>
+      <p>Reliance on AI risked conflicting with the course’s requirement for independent critical thinking.</p>
+      <h4>Evidence</h4>
+      <p>Some AI-generated passages closely mirrored online examples, lacking personal insight.</p>
+      <h4>Action</h4>
+      <ul>
+        <li>Manually reviewed and rewrote all AI-assisted content to include personal analysis and terminology.</li>
+        <li>Declared in the introduction that content was AI-assisted and fully revised for transparency.</li>
+      </ul>
+      <h4>Learning</h4>
+      <p>Transparent disclosure and deep editing are essential to uphold academic standards.</p>
+    </div>
+
+    <div class="seal">
+      <h3>Challenge 5: Generating Nine Game Section Layouts</h3>
+      <h4>Situation</h4>
+      <p>AI initially produced incomplete forum layouts, missing some of the nine required game categories.</p>
+      <h4>Evidence</h4>
+      <p>Code outputs omitted categories like <code>TCG</code> and <code>SPG</code>.</p>
+      <h4>Action</h4>
+      <ul>
+        <li>Specified all nine categories in the prompt and requested per-category templates.</li>
+        <li>Generated a single-column template first, then looped to create nine sections, finalizing manually.</li>
+      </ul>
+      <h4>Learning</h4>
+      <p>Clear requirement lists and phased generation ensure completeness and accuracy.</p>
+    </div>
+
+    <div class="seal">
+      <h3>Challenge 6: Inaccurate Resource Integration Descriptions</h3>
+      <h4>Situation</h4>
+      <p>AI’s initial resource panel text lacked “upload,” “download,” and “preview” steps for mods and maps.</p>
+      <h4>Evidence</h4>
+      <p>Missing references to <code>getData.js</code> and <code>postFormData.js</code> API fields.</p>
+      <h4>Action</h4>
+      <ul>
+        <li>Included resource type breakdown and operation steps in prompts.</li>
+        <li>Aligned examples with actual API parameter names for consistency.</li>
+      </ul>
+      <h4>Learning</h4>
+      <p>Embedding API details in prompts yields outputs that match implementation needs.</p>
+    </div>
+
+    <div class="seal">
+      <h3>Challenge 7: Misaligned Keyword Search Logic</h3>
+      <h4>Situation</h4>
+      <p>AI recommended backend indexing and a tag system, but the project only implements front-end text matching.</p>
+      <h4>Evidence</h4>
+      <p>Provided pseudo-code assumed database and server APIs, unsuitable for the front end.</p>
+      <h4>Action</h4>
+      <ul>
+        <li>Clarified that only front-end text.match() is supported in prompts.</li>
+        <li>Supplied specific <code>site_map.js</code> function and DOM examples.</li>
+      </ul>
+      <h4>Learning</h4>
+      <p>Defining implementation boundaries guides AI toward executable solutions.</p>
+    </div>
+
+    <div class="seal">
+      <h3>Challenge 8: Consistent Cyberpunk Styling</h3>
+      <h4>Situation</h4>
+      <p>AI-generated CSS often omitted custom neon variables and spacing conventions.</p>
+      <h4>Evidence</h4>
+      <p>Outputs lacked <code>--neon-color</code> and <code>--space-#</code> usage.</p>
+      <h4>Action</h4>
+      <ul>
+        <li>Emphasized root variables and spacing scale in prompts.</li>
+        <li>Generated layout then style modules separately, merging and tweaking manually.</li>
+      </ul>
+      <h4>Learning</h4>
+      <p>Phased prompts and explicit variable mentions ensure stylistic consistency.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Integrity Statement</h2>
+    <p>
+      All Generative AI and Machine Translation tools used in this document comply with the course’s GenAI & MT Usage Framework. AI-assisted content has been thoroughly reviewed and revised to ensure accuracy, originality, and adherence to academic integrity.
+    </p>
+  </section>
+</body>
+</html>
+</p>
+             
+                </div>
+            </div>
+
+            <!-- 简短评论 -->
+
+
+        </div>
+
+        </section>
+
+
+        <!-- 页面专用脚本 -->
+        <script type="module" src="js/style_guide.js"></script>
+
+
+        <!-- 公共样式 -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <!-- 新增：赛博朋克风格布局 -->
+        <link rel="stylesheet" href="css/cyberpunk_layout.css">
+        <!-- 页面专用样式 -->
+        <link rel="stylesheet" href="css/page_css/style_guide.css" />
+
+        <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+
+
+        <!-- 页面专用脚本 -->
+        <script type="module" src="js/style_guide.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script
+            src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+</body>
+
+</html>

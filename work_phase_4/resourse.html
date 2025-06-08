@@ -149,7 +149,59 @@
             </div>
 
             <!-- 简短评论 -->
+           <div class="row">
+                <div class="container-small col-md-6 container-login">
+                    <h1 style="font-size: 60px;">Community<br>
+                    </h1>
+                    <form id="community-form" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="person_name">Name:</label>
+                            <input type="text" id="person_name" name="person_name" required />
+                        </div>
 
+                        <div class="form-group">
+                            <label for="chat_post_title">chat_post_title :</label>
+                            <input type="text" id="chat_post_title" name="chat_post_title" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="chat_post_content">chat_post_content :</label>
+                            <input type="text" id="chat_post_content" name="chat_post_content" required />
+                        </div>
+
+                        <button type="submit">Chat</button>
+                    </form>
+                    <!-- 3. 接收 POST 反馈的区域 -->
+                    <p id="form-feedback"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div id="community-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 引入模块化脚本 -->
+    <script type="module" src="js/RPG.js" defer></script>
+    <script type="module" src="js/RPGview.js" defer></script>
+    <!-- 延迟加载行为脚本 / Deferred load of behavioural design script -->
+    <script type="module" src="js/modules/view.js"></script>
+    <style>
+        .container-login {
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        #form-feedback {
+            margin: 10px 0px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .nav-desktop a {
+            color: white !important;
+        }
+    </style>
 
         </div>
 
