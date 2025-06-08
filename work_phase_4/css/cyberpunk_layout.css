@@ -1,133 +1,249 @@
 /* ========== 全局设置 / Global Settings ========== */
-*, *::before, *::after { box-sizing: border-box; /* 将内边距和边框计入元素宽高 / Include padding and border in element width & height */ }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* 将内边距和边框计入元素宽高 / Include padding and border in element width & height */
+}
 
 /* 根级 CSS 变量定义 / Root-level CSS Variables */
 :root {
-  --color-primary: #0ff0fc;    /* 主要霓虹青色强调 / Main neon cyan accent */
-  --color-accent: #ff007f;     /* 次要霓虹洋红强调 / Secondary neon magenta accent */
-  --secondary-color: #3498db;  /* 附加主题蓝色 / Additional theme blue */
-  --color-bg: #0a0a0a;         /* 背景基色 / Base background color */
-  --color-text: #e0e0e0;       /* 默认文本颜色 / Default text color */
-  --neon-green: #39ff14;       /* 霓虹绿色强调 / Neon green accent */
-  --neon-pink: #ff207c;        /* 霓虹粉色强调 / Neon pink accent */
-  --neon-blue: #00ffff;        /* 霓虹蓝色强调 / Neon blue accent */
+  --color-primary: #0ff0fc;
+  /* 主要霓虹青色强调 / Main neon cyan accent */
+  --color-accent: #ff007f;
+  /* 次要霓虹洋红强调 / Secondary neon magenta accent */
+  --secondary-color: #3498db;
+  /* 附加主题蓝色 / Additional theme blue */
+  --color-bg: #0a0a0a;
+  /* 背景基色 / Base background color */
+  --color-text: #e0e0e0;
+  /* 默认文本颜色 / Default text color */
+  --neon-green: #39ff14;
+  /* 霓虹绿色强调 / Neon green accent */
+  --neon-pink: #ff207c;
+  /* 霓虹粉色强调 / Neon pink accent */
+  --neon-blue: #00ffff;
+  /* 霓虹蓝色强调 / Neon blue accent */
 }
 
 /* ========== Body 样式 / Body Styles ========== */
 body {
-  font-family: 'Exo', Georgia, 'Times New Roman', serif; /* 字体堆栈 / Font stack */
-  background-color: var(--color-bg); /* 背景颜色 / Background color */
-  color: var(--color-text);          /* 文本颜色 / Text color */
-  line-height: 1.6;                  /* 行高 / Line height */
-  letter-spacing: 0.5px;             /* 字母间距 / Letter spacing */
-  padding: var(--space-2);           /* 页面内边距 / Page padding */
+  font-family: 'Exo', Georgia, 'Times New Roman', serif;
+  /* 字体堆栈 / Font stack */
+  background-color: var(--color-bg);
+  /* 背景颜色 / Background color */
+  color: var(--color-text);
+  /* 文本颜色 / Text color */
+  line-height: 1.6;
+  /* 行高 / Line height */
+  letter-spacing: 0.5px;
+  /* 字母间距 / Letter spacing */
+  padding: var(--space-2);
+  /* 页面内边距 / Page padding */
 }
 
 /* ========== 容器包装器 / Container Wrapper for All Content ========== */
 .container {
-  background: rgba(10, 10, 10, 0.8);   /* 半透明深色背景 / Semi-transparent dark background */
-  padding: var(--space-3) var(--space-2); /* 垂直和水平内边距 / Vertical & horizontal padding */
-  margin: 0 auto;                      /* 水平居中 / Center horizontally */
-  border: 2px solid var(--color-primary); /* 主要颜色边框 / Primary color border */
-  border-radius: 8px;                  /* 圆角 / Rounded corners */
+  background: rgba(10, 10, 10, 0.8);
+  /* 半透明深色背景 / Semi-transparent dark background */
+  padding: var(--space-3) var(--space-2);
+  /* 垂直和水平内边距 / Vertical & horizontal padding */
+  margin: 0 auto;
+  /* 水平居中 / Center horizontally */
+  border: 2px solid var(--color-primary);
+  /* 主要颜色边框 / Primary color border */
+  border-radius: 8px;
+  /* 圆角 / Rounded corners */
 }
 
 /* ========== Section 样式 / Section Styling ========== */
-section, article {
-  padding: var(--space-2) 0;          /* 上下内边距 / Vertical padding */
-  margin-bottom: var(--space-4);      /* 底部外边距 / Bottom margin */
+section,
+article {
+  padding: var(--space-2) 0;
+  /* 上下内边距 / Vertical padding */
+  margin-bottom: var(--space-4);
+  /* 底部外边距 / Bottom margin */
 }
 
 /* ========== Neon 标题 / Headings with Neon Glow ========== */
-h1, h2, h3 {
-  color: var(--color-primary);        /* 标题文字主色 / Heading text primary color */
-  text-shadow:                         /* 霓虹发光阴影 / Neon glow text-shadow */
+h1,
+h2,
+h3 {
+  color: var(--color-primary);
+  /* 标题文字主色 / Heading text primary color */
+  text-shadow:
+    /* 霓虹发光阴影 / Neon glow text-shadow */
     0 0 5px var(--color-primary),
     0 0 10px var(--neon-green),
     0 0 20px var(--neon-pink);
 }
 
 /* ========== 响应式图片网格 / Responsive Image Grid ========== */
-.gallery, .reflective-gallery {
-  display: grid;                      /* 网格布局 / Grid layout */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 自动适应列 / Auto-fit columns */
-  gap: var(--space-2);                /* 网格间距 / Grid gap */
+.gallery,
+.reflective-gallery {
+  display: grid;
+  /* 网格布局 / Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* 自动适应列 / Auto-fit columns */
+  gap: var(--space-2);
+  /* 网格间距 / Grid gap */
 }
-.gallery img, .reflective-img {
-  width: 100%;                        /* 宽度填满单元格 / Full cell width */
-  height: auto;                       /* 高度自适应 / Auto height */
-  object-fit: cover;                  /* 裁剪填充 / Cover fit */
-  border: 1px solid var(--neon-green); /* 边框霓虹绿 / Neon green border */
-  border-radius: 4px;                 /* 圆角 / Rounded corners */
-  box-shadow: 0 0 8px var(--neon-pink); /* 霓虹粉色阴影 / Neon pink glow */
+
+.gallery img,
+.reflective-img {
+  width: 100%;
+  /* 宽度填满单元格 / Full cell width */
+  height: auto;
+  /* 高度自适应 / Auto height */
+  object-fit: cover;
+  /* 裁剪填充 / Cover fit */
+  border: 1px solid var(--neon-green);
+  /* 边框霓虹绿 / Neon green border */
+  border-radius: 4px;
+  /* 圆角 / Rounded corners */
+  box-shadow: 0 0 8px var(--neon-pink);
+  /* 霓虹粉色阴影 / Neon pink glow */
 }
 
 /* ========== 表单容器 / Form Container ========== */
 #community-section {
-  max-width: 600px;                   /* 最大宽度 / Max width */
-  background: rgba(20, 20, 20, 0.9);  /* 深色半透明背景 / Dark semi-transparent background */
-  margin: var(--space-3) auto;        /* 垂直间距并水平居中 / Vertical margin & center */
-  padding: var(--space-3);            /* 容器内边距 / Container padding */
-  border: 1px solid var(--neon-blue); /* 霓虹蓝边框 / Neon blue border */
-  border-radius: 6px;                 /* 圆角 / Rounded corners */
+  max-width: 600px;
+  /* 最大宽度 / Max width */
+  background: rgba(20, 20, 20, 0.9);
+  /* 深色半透明背景 / Dark semi-transparent background */
+  margin: var(--space-3) auto;
+  /* 垂直间距并水平居中 / Vertical margin & center */
+  padding: var(--space-3);
+  /* 容器内边距 / Container padding */
+  border: 1px solid var(--neon-blue);
+  /* 霓虹蓝边框 / Neon blue border */
+  border-radius: 6px;
+  /* 圆角 / Rounded corners */
 }
 
 /* ========== 表单字段 / Form Fields ========== */
 #community-form .form-group input,
 #community-form .form-group textarea,
 #community-form .form-group input[type="file"] {
-  background: #111;                   /* 深色背景 / Dark background */
-  color: var(--color-text);          /* 文本颜色 / Text color */
-  border: 1px solid var(--color-primary); /* 主色边框 / Primary color border */
-  padding: 0.75rem;                   /* 内边距 / Padding */
-  border-radius: 4px;                 /* 圆角 / Rounded corners */
+  background: #111;
+  /* 深色背景 / Dark background */
+  color: var(--color-text);
+  /* 文本颜色 / Text color */
+  border: 1px solid var(--color-primary);
+  /* 主色边框 / Primary color border */
+  padding: 0.75rem;
+  /* 内边距 / Padding */
+  border-radius: 4px;
+  /* 圆角 / Rounded corners */
 }
+
 #community-form input:focus,
 #community-form textarea:focus {
-  outline: 2px solid var(--color-accent); /* 焦点边框 / Focus outline */
-  box-shadow: 0 0 5px var(--color-accent); /* 焦点阴影 / Focus glow */
+  outline: 2px solid var(--color-accent);
+  /* 焦点边框 / Focus outline */
+  box-shadow: 0 0 5px var(--color-accent);
+  /* 焦点阴影 / Focus glow */
 }
 
 /* ========== 提交按钮 / Submit Button ========== */
 #community-form button {
-  background: var(--color-primary);   /* 背景主色 / Background primary color */
-  color: #111;                        /* 文本深色 / Dark text */
-  padding: 0.75rem 1.5rem;            /* 内边距 / Padding */
-  border: none;                       /* 去除边框 / Remove border */
-  border-radius: 4px;                 /* 圆角 / Rounded corners */
-  font-weight: 700;                   /* 加粗文本 / Bold text */
-  box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--neon-blue); /* 按钮霓虹阴影 / Neon glow */
-  transition: background 0.2s, box-shadow 0.2s, transform 0.1s; /* 过渡 / Transitions */
+  background: var(--color-primary);
+  /* 背景主色 / Background primary color */
+  color: #111;
+  /* 文本深色 / Dark text */
+  padding: 0.75rem 1.5rem;
+  /* 内边距 / Padding */
+  border: none;
+  /* 去除边框 / Remove border */
+  border-radius: 4px;
+  /* 圆角 / Rounded corners */
+  font-weight: 700;
+  /* 加粗文本 / Bold text */
+  box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--neon-blue);
+  /* 按钮霓虹阴影 / Neon glow */
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  /* 过渡 / Transitions */
 }
+
 #community-form button:hover {
-  background: var(--neon-pink);       /* 悬停背景 / Hover background */
-  box-shadow: 0 0 15px var(--neon-pink), 0 0 30px var(--neon-green); /* 悬停霓虹阴影 / Hover glow */
-  transform: translateY(-2px);        /* 悬停移动 / Hover translate */
+  background: var(--neon-pink);
+  /* 悬停背景 / Hover background */
+  box-shadow: 0 0 15px var(--neon-pink), 0 0 30px var(--neon-green);
+  /* 悬停霓虹阴影 / Hover glow */
+  transform: translateY(-2px);
+  /* 悬停移动 / Hover translate */
 }
+
 #community-form button:active {
-  transform: translateY(1px);         /* 按下反馈 / Active translate */
+  transform: translateY(1px);
+  /* 按下反馈 / Active translate */
 }
 
 /* ========== 链接与面包屑 / Links and Breadcrumbs ========== */
-a { color: var(--neon-green);         /* 链接颜色 / Link color */ text-decoration: none; /* 去除下划线 / Remove underline */ transition: color 0.2s; /* 过渡 / Transition */ }
-a:hover { color: var(--neon-pink);   /* 悬停链接 / Hover link color */ }
-.breadcrumbs li + li::before { content: ">"; padding: 0 0.5rem; color: var(--color-text); /* 分隔符 / Separator */ }
-.breadcrumbs a { color: var(--neon-blue); /* 面包屑链接 / Breadcrumb link color */ }
+a {
+  color: var(--neon-green);
+  /* 链接颜色 / Link color */
+  text-decoration: none;
+  /* 去除下划线 / Remove underline */
+  transition: color 0.2s;
+  /* 过渡 / Transition */
+}
+
+a:hover {
+  color: var(--neon-pink);
+  /* 悬停链接 / Hover link color */
+}
+
+.breadcrumbs li+li::before {
+  content: ">";
+  padding: 0 0.5rem;
+  color: var(--color-text);
+  /* 分隔符 / Separator */
+}
+
+.breadcrumbs a {
+  color: var(--neon-blue);
+  /* 面包屑链接 / Breadcrumb link color */
+}
 
 /* ========== 文本块实用工具 / Utility Text Blocks ========== */
-.text-block { padding: var(--space-2); background: rgba(15, 15, 15, 0.5); border-left: 4px solid var(--neon-green); border-radius: 4px; /* 文本块样式 / Text block styling */ }
+.text-block {
+  padding: var(--space-2);
+  background: rgba(15, 15, 15, 0.5);
+  border-left: 4px solid var(--neon-green);
+  border-radius: 4px;
+  /* 文本块样式 / Text block styling */
+}
 
 /* ========== 媒体自适应 / Media Responsiveness ========== */
-img, video, iframe { max-width: 100%; /* 最大宽度 / Max width */ height: auto; /* 保持纵横比 / Maintain aspect ratio */ }
+img,
+video,
+iframe {
+  max-width: 100%;
+  /* 最大宽度 / Max width */
+  height: auto;
+  /* 保持纵横比 / Maintain aspect ratio */
+}
 
 /* ========== 代码自动换行 / Code Wrapping ========== */
-pre, code, .explanation, .annotation { overflow-wrap: break-word; /* 换行溢出单词 / Break long words */ word-break: break-word; /* 在任意点换行 / Break at arbitrary points */ }
+pre,
+code,
+.explanation,
+.annotation {
+  overflow-wrap: break-word;
+  /* 换行溢出单词 / Break long words */
+  word-break: break-word;
+  /* 在任意点换行 / Break at arbitrary points */
+}
 
 /* 只针对“col-8 → row → col-4”里包裹 img 的情况 */
 .col-8 .row .col-4 img {
-  display: block;       /* 去除底部空隙 */
-  width: 100%;          /* 拉满父级列宽 */
-  height: 250px;        /* 固定你想要的高度，按需调整 */
-  object-fit: cover;    /* 等比裁剪并填满容器 */
+  display: block;
+  /* 去除底部空隙 */
+  width: 100%;
+  /* 拉满父级列宽 */
+  height: 250px;
+  /* 固定你想要的高度，按需调整 */
+  object-fit: cover;
+  /* 等比裁剪并填满容器 */
 }
-

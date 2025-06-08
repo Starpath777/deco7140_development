@@ -72,7 +72,7 @@ nav ul { /* 选择 <nav> 下的 <ul> 元素作为菜单列表容器 / Selects th
   padding: 1rem 0; /* 上下内边距 1rem / 1rem vertical padding */
   font-size: 1.25rem; /* 字号 1.25rem / 1.25rem font size */
   text-decoration: none; /* 去除下划线 / Remove underline */
-  color: var(--text-color); /* 使用文本主题色 / Use theme text color */
+  color: var(--color-text); /* 使用文本主题色 / Use theme text color */
   position: relative; /* 相对定位，配合伪元素使用 / Relative positioning for pseudo-elements */
   transition: background-color 0.2s, color 0.2s, font-weight 0.2s; /* 平滑过渡 / Smooth transitions */
 } /* End link styles */

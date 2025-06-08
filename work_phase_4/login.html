@@ -1,37 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- <!DOCTYPE html> -->
+<!DOCTYPE html> <!-- HTML5 文档类型声明 / HTML5 document type declaration -->
+<html lang="en"> <!-- 根元素，语言设定为英语 / Root element, language set to English -->
 
-<head>
-  <meta charset="UTF-8" />
+<head> <!-- 文档头部，包含元信息和资源链接 / Head section containing metadata and resource links -->
+  <meta charset="UTF-8" /> <!-- 字符编码声明为 UTF-8 / Character encoding set to UTF-8 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 响应式视口设置 / Responsive viewport settings -->
 
-  <!-- 公共样式 -->
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <!-- 新增：赛博朋克风格布局 -->
-  <link rel="stylesheet" href="css/cyberpunk_layout.css">
-  <!-- 页面专用样式 -->
-  <link rel="stylesheet" href="css/page_css/style_guide.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" href="./css/login.css">
-  <title>Style Guide</title>
-</head> ·
+  <!-- 公共样式 / Common styles -->
+  <link rel="stylesheet" href="css/reset.css" /> <!-- 重置 CSS，消除浏览器默认样式差异 / Reset CSS to normalize browser defaults -->
+  <link rel="stylesheet" href="css/base.css" /> <!-- 基础全局样式 / Base global styles -->
+  <link rel="stylesheet" href="css/layout.css" /> <!-- 布局样式 / Layout styles -->
+  <link rel="stylesheet" href="css/components.css" /> <!-- 通用组件样式 / Component styles -->
+  <!-- 新增：赛博朋克风格布局 / Added: Cyberpunk theme layout -->
+  <link rel="stylesheet" href="css/cyberpunk_layout.css"> <!-- 赛博朋克布局 CSS / Cyberpunk layout CSS -->
 
+  <!-- 画廊和查看器的骨架组件 CSS / Gallery and viewer skeleton CSS -->
+  <link rel="stylesheet" href="css/component_skeletons/gallery.css" /> <!-- 画廊基础样式 / Gallery base styles -->
+  <link rel="stylesheet" href="css/component_skeletons/viewer.css" /> <!-- 查看器面板样式 / Viewer panel styles -->
+
+  <!-- 表单引用 / Form references -->
+  <link rel="stylesheet" href="css/component_skeletons/form.css"> <!-- 表单重置与基础样式 / Form reset & base styles -->
+  <link rel="stylesheet" href="css/behavioural_design.css"> <!-- 行为设计页面专用样式 / Behavioural design page styles -->
+
+  <!-- 页面专用样式 / Page-specific styles -->
+  <link rel="stylesheet" href="css/page_css/behavioural_design.css" /> <!-- 行为设计独立样式 / Standalone page CSS -->
+
+  <title>Behavioural Design</title> <!-- 文档标题显示在浏览器标签 / Document title for browser tab -->
+</head>
 
 <body>
   <main>
     <div class="container">
+      <!-- 移动端导航 -->
       <nav id="nav-mobile" aria-label="Main Navigation">
         <ul>
           <li><a href="index.html">Forum</a></li>
           <li><a href="resourse.html">Resourse</a></li>
-          <li><a href="style_guide.html" aria-current="page">Events</a></li>
-          <li><a href="ethical_response.html">Guilds</a></li>
-          <li><a href="genai_mt_acknowledgement.html">Message</a></li>
+                    <li><a href="implementation_rationale.html">Guilds</a></li>
           <li><a href="login.html">User</a></li>
         </ul>
       </nav>
@@ -41,115 +47,77 @@
         <ul>
           <li><a href="index.html">Forum</a></li>
           <li><a href="resourse.html">Resourse</a></li>
-          <li><a href="style_guide.html" aria-current="page">Events</a></li>
-          <li><a href="ethical_response.html">Guilds</a></li>
-          <li><a href="genai_mt_acknowledgement.html">Message</a></li>
+                    <li><a href="implementation_rationale.html">Guilds</a></li>
           <li><a href="login.html">User</a></li>
           <li>
             <div id="search-wrapper">
               <form action="#">
                 <input type="text" id="search" placeholder="Search something...">
                 <div id="close-icon"></div>
-                <input class="d-none" type="submit" value="">
+                <!-- <input class="d-none" type="submit" value=""> -->
               </form>
             </div>
           </li>
         </ul>
       </nav>
+
       <div class="row">
         <div class="col-md-6">
           <div class="group">
-            <img src="assets/visceral.jpg" alt="">
+            <img src="assets/yv.jpg" alt="Login image">
           </div>
         </div>
-        <div class=" container-small col-md-6 container-login">
+        <div class="container-small col-md-6 container-login">
           <h1 style="font-size: 60px;">login<br>
             <small>No account？<br><a href="register.html">enroll</a></small>
           </h1>
-          <form method="post">
+          <div id="community-list"></div>
+          <form id="community-form" enctype="multipart/form-data">
             <div class="form-group">
-              <label>email</label>
-              <input type="email" class="form-control" name="username">
+              <label for="name">Full Name:</label>
+              <input type="text" id="name" name="name" required />
             </div>
-            <div class="form-group">
-              <label>password</label>
-              <input type="password" class="form-control" name="password">
-            </div>
-            <div class="form-group" style="margin-top: 20px;">
-              <a href="../index.html"><button class=" btn btn-primary btn-block" type="submit"
-                  onclick="Login();">login</button></a>
-            </div>
-            <div class="form-group">
-              <a href="#">Forgot your password?</a>
-            </div>
-          </form>
-        </div>
 
+            <div class="form-group">
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="photo">Upload Photo:</label>
+              <input type="file" id="photo" name="photo" accept="image/*" />
+            </div>
+
+            <button type="submit">Join the Community</button>
+          </form>
+          <!-- 3. 接收 POST 反馈的区域 -->
+          <p id="form-feedback"></p>
+        </div>
       </div>
     </div>
+  </main>
 
+  <!-- 引入模块化脚本 -->
+  <script type="module" src="js/behavioural_design.js" defer></script>
+  <!-- 延迟加载行为脚本 / Deferred load of behavioural design script -->
+  <script type="module" src="js/modules/view.js"></script>
+  <style>
+    .container-login {
+      padding: 40px;
+      border-radius: 20px;
+    }
 
+    #form-feedback {
+      margin: 10px 0px;
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+    }
 
-    <!-- 页面专用脚本 -->
-    <script type="module" src="js/style_guide.js"></script>
-
-
-    <!-- 公共样式 -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <!-- 新增：赛博朋克风格布局 -->
-    <link rel="stylesheet" href="css/cyberpunk_layout.css">
-    <!-- 页面专用样式 -->
-    <link rel="stylesheet" href="css/page_css/style_guide.css" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-
-
-
-    <!-- 页面专用脚本 -->
-    <script type="module" src="js/style_guide.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    .nav-desktop a {
+      color: white !important;
+    }
+  </style>
 </body>
-<script>
- // 登录函数 / Login function
-function Login() {
-
-    // 获取密码输入的值 / Get the value entered in the password field
-    var password_value = $("#password").val();
-    console.log(password_value); // 在控制台输出密码值 / Output password value to console
-
-    // 如果密码为空、null 或未定义，则添加红色边框 / If password is empty, null, or undefined, add red border
-    if (password_value == "" || password_value == null || typeof name_value == "undefined") {
-        $("#password").css("border", "1px solid red"); // 设置密码输入框边框为红色 / Set password input border to red
-    } else {
-        $("#password").css("border", ""); // 重置密码输入框边框样式 / Reset password input border style
-    }
-
-    // 获取用户名输入的值 / Get the value entered in the name field
-    var name_value = $("#name").val();
-    console.log(name_value); // 在控制台输出用户名值 / Output name value to console
-
-    // 如果用户名为空、null 或未定义，则添加红色边框 / If name is empty, null, or undefined, add red border
-    if (name_value == "" || name_value == null || typeof name_value == "undefined") {
-        $("#name").css("border", "1px solid red"); // 设置用户名输入框边框为红色 / Set name input border to red
-    } else {
-        $("#name").css("border", ""); // 重置用户名输入框边框样式 / Reset name input border style
-    }
-}
-
-</script>
-<style>
-  .container-login {
-    padding: 40px;
-    border-radius: 20px;
-    /* background-color: #f0eeee; */
-  }
-</style>
 
 </html>

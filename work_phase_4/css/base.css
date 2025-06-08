@@ -158,7 +158,7 @@ h3 {
 2. 输入框默认宽度为 0，通过 transition 延迟展开，focus 时平滑膨胀至 270px。  
 3. 关闭图标（#close-icon）的 ::before/::after 两条线，在匹配 .search-expanded 时依次用 cross-1-in 和 cross-2-in 动画从 scaleX(0) → scaleX(1)，形成“×”。  
 
-1. The magnifier handle (#search-wrapper::after) is hidden by default, slides in via lens-in on load, and retracts via lens-out on focus.  
+1. The magnifier handle (#search-wrapper: ) is hidden by default, slides in via lens-in on load, and retracts via lens-out on focus.  
 2. The input field starts at width:0, then expands to 270px with a delayed transition when focused.  
 3. The close icon’s pseudo-elements (::before/::after) animate from scaleX(0) to scaleX(1) in sequence under .search-expanded, forming the “×” shape.
 */ 

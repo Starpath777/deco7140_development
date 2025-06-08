@@ -1,0 +1,158 @@
+/* 全局样式重置与基础设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "微软雅黑", sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* 顶部导航栏样式 */
+.top-nav {
+    display: flex;
+    background-color: #0066cc;
+    height: 40px;
+    align-items: center;
+}
+
+.nav-item {
+    color: #fff;
+    padding: 0 20px;
+    cursor: pointer;
+    line-height: 40px;
+}
+
+.nav-item.active {
+    background-color: #004c99;
+}
+
+/* 主体容器布局 */
+.container {
+    display: flex;
+    padding: 10px;
+}
+
+/* 左侧内容区样式 */
+.left-section {
+    flex: 7;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.tab-group {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.tab {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.sub-tab-group {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.sub-tab {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.sub-tab.active {
+    background-color: #eaeaea;
+}
+
+.content-area {
+    min-height: 200px;
+}
+
+/* 右侧侧边栏样式 */
+.right-sidebar {
+    flex: 3;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.info-box {
+    margin-bottom: 15px;
+}
+
+.info-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.setting {
+    text-align: right;
+    color: #0066cc;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.avatar-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-info img {
+    width: 100px !important;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.user-info {
+    line-height: 20px;
+}
+
+.user-info div {
+    width: 100%;
+}
+
+.service-center {
+    margin-top: 10px;
+    color: #666;
+}
+
+.new-tag {
+    background-color: #f00;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin-left: 3px;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-nav {
+    color: #0066cc;
+    text-decoration: none;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.sidebar-nav.active-nav {
+    font-weight: bold;
+}

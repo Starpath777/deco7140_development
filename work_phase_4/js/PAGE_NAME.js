@@ -1,3 +1,5 @@
+// In your js/PAGE_NAME.js file
+
 import { postFormData } from './modules/postFormData.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         feedback.textContent = 'Submitting...';
+
         const { success, data } = await postFormData(form, 'https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/community/', {
             'student_number': 's4876391',
             'uqcloud_zone_id': 'cdfd9774',
